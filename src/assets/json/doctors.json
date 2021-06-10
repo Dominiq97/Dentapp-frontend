@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Orali FIsher",
+        "specialist": "BDS - Dental Cosmetology",
+        "image": "doctor-01.jpg",
+        "rating": 66,
+        "location": "Florida, USA",
+        "availableOn": "Available on Mon, 22 Sep",
+        "fees": "$150 - $220"
+    },
+    {
+        "id": 2,
+        "name": "Gennaro Weiner",
+        "specialist": "MDS - Dental Cosmetology",
+        "image": "doctor-02.jpg",
+        "rating": 17,
+        "location": "Newyork, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$50 - $300"
+    },
+    {
+        "id": 3,
+        "name": "Jerelyn Pino ",
+        "specialist": "MBBS, DNB - Cardiology",
+        "image": "doctor-03.jpg",
+        "rating": 27,
+        "location": "Georgia, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$100 - $400"
+    },
+    {
+        "id": 4,
+        "name": "Rieko Thrash",
+        "specialist": "MBBS, MS - General Surgery",
+        "image": "doctor-04.jpg",
+        "rating": 4,
+        "location": "Louisiana, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$150 - $250"
+    },
+    {
+        "id": 5,
+        "name": "Ultima Douglas",
+        "specialist": "MS - Orthopaedics",
+        "image": "doctor-05.jpg",
+        "rating": 66,
+        "location": "Texas, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$100 - $500"
+    },
+    {   
+        "id": 6,
+        "name": "Neomah Oliveira",
+        "specialist": "MBBS, MD - General Medicine",
+        "image": "doctor-06.jpg",
+        "rating": 43,
+        "location": "Kansas, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$100 - $1000"
+    },
+    {
+        "id": 7,
+        "name": "Jillisa Tremblay",
+        "specialist": "MBBS, MD - Dermatology",
+        "image": "doctor-07.jpg",
+        "rating": 20,
+        "location": "Kansas, USA",
+        "availableOn": "Available on Fri, 22 Mar",
+        "fees": "$100 - $400"
+    },
+    {
+        "id": 8,
+        "name": "Denby Cathey",
+        "specialist": "MBBS, MD - Ophthalmology",
+        "image": "doctor-08.jpg",
+        "rating": 66,
+        "location": "Michigan, USA",
+        "availableOn": "Available on Fri, 20 Mar",
+        "fees": "$50 - $700"
+    }
+]
