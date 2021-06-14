@@ -1,7 +1,7 @@
 {
-  "name": "template-dental",
+  "name": "Dentapp",
   "version": "1.0.0",
-  "description": "doccure dental vuejs project",
+  "description": "Dentapp: web management system",
   "author": "dreamguys technologies",
   "private": true,
   "scripts": {

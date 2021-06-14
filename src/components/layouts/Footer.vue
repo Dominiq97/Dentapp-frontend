@@ -1,15 +1,12 @@
 <template>
 		<!-- Footer -->
 			<footer class="footer">
-				
+
 				<!-- Footer Top -->
 				<div class="footer-top">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-12 text-center">
-								<router-link to="/index" class="footer-logo logo">
-									<img src="@/assets/img/footer-logo.png" class="img-fluid" alt="Logo">
-								</router-link>
 							</div>
 							<div class="social-icon media-btn mt-3 mb-2">
 								<ul>
@@ -49,27 +46,27 @@
 					</div>
 				</div>
 				<!-- /Footer Top -->
-				
+
 				<!-- Footer Bottom -->
                 <div class="footer-bottom">
 					<div class="container-fluid">
-					
+
 						<!-- Copyright -->
 						<div class="copyright">
 							<div class="row">
 								<div class="col-md-12 col-lg-12 text-center">
 									<div class="copyright-text">
-										<p class="mb-0">&copy; 2020 <a href=# class="text-yellow"> Dentalcare</a> All Rights Reserved.</p>
+										<p class="mb-0">&copy; 2021 <a href=# class="text-yellow"> Dominic Catana</a> All Rights Reserved.</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- /Copyright -->
-						
+
 					</div>
 				</div>
 				<!-- /Footer Bottom -->
-				
+
 			</footer>
 			<!-- /Footer -->
 </template>

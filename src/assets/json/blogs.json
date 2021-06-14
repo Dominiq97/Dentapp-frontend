@@ -1,11 +1,11 @@
 [
-    {   
+    {
         "id": 1,
         "date": "4 Dec 2019",
         "blog_image": "blog-01.jpg",
         "doctor_image": "doctor-thumb-01.jpg",
         "doctor_name": "Dr. Orali Fisher",
-        "question": "Doccure – Making your clinic painless visit?",
+        "question": "Dentapp – Making your clinic painless visit?",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -14,7 +14,7 @@
         "blog_image": "blog-02.jpg",
         "doctor_image": "doctor-thumb-02.jpg",
         "doctor_name": "Dr. Loren Bivens",
-        "question": "What are the benefits of Online Doctor Booking?",
+        "question": "What are the benefits of Online Dentist Booking?",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -23,7 +23,7 @@
         "blog_image": "blog-03.jpg",
         "doctor_image": "doctor-thumb-03.jpg",
         "doctor_name": "Dr. Jerelyn Pino",
-        "question": "Benefits of consulting with an Online Doctor",
+        "question": "Benefits of consulting with an Online Dentist",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -32,7 +32,7 @@
         "blog_image": "blog-04.jpg",
         "doctor_image": "doctor-thumb-04.jpg",
         "doctor_name": "Dr. Rieko Thrash",
-        "question": "5 Great reasons to use an Online Doctor",
+        "question": "5 Great reasons to use an Online Dentist",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -41,7 +41,7 @@
         "blog_image": "blog-05.jpg",
         "doctor_image": "doctor-thumb-05.jpg",
         "doctor_name": "Dr. Molefi Snow",
-        "question": "Online Doctor Appointment Scheduling",
+        "question": "Online Dentist Appointment Scheduling",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -50,7 +50,7 @@
         "blog_image": "blog-06.jpg",
         "doctor_image": "doctor-thumb-06.jpg",
         "doctor_name": "Dr. Ultima Douglas",
-        "question": "Simple steps to make your doctor visits exceptional!",
+        "question": "Simple steps to make your dentist visits exceptional!",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {
@@ -59,7 +59,7 @@
         "blog_image": "blog-07.jpg",
         "doctor_image": "doctor-thumb-07.jpg",
         "doctor_name": "Dr. Neomah Oliveira",
-        "question": "Choose your own Online Doctor Appointment",
+        "question": "Choose your own Online Dentist Appointment",
         "answer": "Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor."
     },
     {

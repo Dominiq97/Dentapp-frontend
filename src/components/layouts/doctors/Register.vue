@@ -1,26 +1,25 @@
 <template>
     <div class="main-wrapper">
         <layout-header></layout-header>
-        <!-- Page Content -->
+        	<!-- Page Content -->
 			<div class="content bg-white">
 				<div class="container-fluid">
-
 					<div class="row">
 						<div class="col-md-8 offset-md-2">
 
-							<!-- Register Content -->
+							<!-- Account Content -->
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-md-7 col-lg-6 login-left">
-										<img src="@/assets/img/login-banner.png" class="img-fluid" alt="Dentapp Register">
+										<img src="@/assets/img/login-banner.png" class="img-fluid" alt="Login Banner">
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Patient Register <router-link to="/doctor/register">Are you a Doctor?</router-link></h3>
+											<h3>Doctor Register <router-link to="/patient/register">Not a Doctorrr?</router-link></h3>
 										</div>
 
 										<!-- Register Form -->
-										<form>
+										<form action="/doctor/index">
 											<div class="form-group form-focus">
 												<input type="text" class="form-control floating">
 												<label class="focus-label">Name</label>
@@ -36,7 +35,7 @@
 											<div class="text-right">
 												<router-link class="forgot-link" to="/login">Already have an account?</router-link>
 											</div>
-											<button @click="indexPath" class="btn btn-primary btn-block btn-lg login-btn" >Signup</button>
+											<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
 											<div class="login-or">
 												<span class="or-line"></span>
 												<span class="span-or">or</span>
@@ -55,7 +54,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Register Content -->
+							<!-- /Account Content -->
 
 						</div>
 					</div>
@@ -64,17 +63,6 @@
 
 			</div>
 			<!-- /Page Content -->
-
         <layout-footer></layout-footer>
     </div>
 </template>
-
-<script>
-export default {
-	 methods: {
-       indexPath(){
-		   this.$router.push('/doctor/index');
-	   }
-    },
-}
-</script>

@@ -1,35 +1,6 @@
 <template>
         <!-- Header -->
        <header class="header">
-           <div class="top-header">
-					<div class="container-fluid">
-						<div class="row justify-content-between align-items-center">
-							<div class="col-12 col-md-6">
-								<div class="left">
-									<ul>
-										<li><span><i class="fas fa-phone-alt"></i> Contact Number : +(40) 723 142 712</span></li>
-										<li><span><i class="fas fa-map-marker-alt"></i> Location : 22, South Wales, New York</span></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="right">
-									<ul>
-										<li><span><i class="fas fa-calendar-check"></i> Mon - Fri : 09.00 AM to 05.00 PM</span></li>
-										<li class="dropdown language-select">
-											<span class="dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><i class="fas fa-globe-africa"></i> English</span>
-											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-dropdown">
-											    <a class="dropdown-item" href="#">Spanish</a>
-											    <a class="dropdown-item" href="#">Portuguese </a>
-											    <a class="dropdown-item" href="#">Russian</a>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
            <nav class="navbar navbar-expand-lg header-nav">
                <div class="navbar-header">
                    <a id="mobile_btn" href="javascript:void(0);">
@@ -128,13 +99,16 @@
                           <router-link to=""  @click.native="dashboard(1)" >Admin</router-link>
                        </li>
                        <li class="login-link">
-                           <router-link to="/login">Login / Signup</router-link>
+                           <router-link to="/login">Logout</router-link>
                        </li>
                    </ul>
                </div>
                <ul class="nav header-navbar-rht">
-                   <li class="nav-item">
-                       <router-link class="nav-link header-login" to="/login">login / Signup </router-link>
+                   <li v-if="isLoggedIn" class="nav-item" >
+                     <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+                   </li>
+                   <li v-else class="nav-item">
+                       <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
                    </li>
                </ul>
            </nav>
@@ -182,6 +156,12 @@ export default {
 
    },
    computed: {
+       isLoggedIn(){
+           return this.$store.getters.loggedIn;
+       },
+       getUser(){
+         return this.$store.getters.getUser;
+       },
        currentPath() {
            return this.$route.name
        },
@@ -205,6 +185,10 @@ export default {
        }
    },
    methods: {
+     logout(){
+      this.$store.dispatch('userLogout');
+      this.$router.replace('');
+    },
        dashboard(value) {
            if(value == 1) {
                let router = this.$router.resolve({path: '/admin/index'});

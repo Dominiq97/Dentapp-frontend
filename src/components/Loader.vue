@@ -15,7 +15,7 @@
 export default {
     name: 'App',
 	beforeCreate() {
-		$(window).on ('load', function (){ 
+		$(window).on ('load', function (){
 			$('#loader').delay(100).fadeOut('slow');
 			$('#loader-wrapper').delay(500).fadeOut('slow');
 			$('body').delay(500).css({'overflow':'visible'});
@@ -65,16 +65,16 @@ export default {
 }
 .loader-ellips__dot:nth-child(1),
 .loader-ellips__dot:nth-child(2) {
-	left: 0;  
+	left: 0;
 }
-.loader-ellips__dot:nth-child(3) { 
-	left: 1.5em;   
+.loader-ellips__dot:nth-child(3) {
+	left: 1.5em;
 }
-.loader-ellips__dot:nth-child(4) { 
-	left: 3em;   
+.loader-ellips__dot:nth-child(4) {
+	left: 3em;
 }
 .loader-ellips__dot:nth-child(1) {
-	animation-name: reveal;  
+	animation-name: reveal;
 }
 .loader-ellips__dot:nth-child(2),
 .loader-ellips__dot:nth-child(3) {
@@ -85,28 +85,28 @@ export default {
 	animation-direction: reverse;
 }
 @keyframes reveal {
-	from { 
-		transform: scale(0.001); 
+	from {
+		transform: scale(0.001);
 	}
-	to { 
-		transform: scale(1); 
+	to {
+		transform: scale(1);
 	}
 }
 @keyframes slide {
-	to { 
-		transform: translateX(1.5em) 
+	to {
+		transform: translateX(1.5em)
 	}
 }
-.loader-ellips__dot:nth-child(1) { 
-	background: #183153;  
+.loader-ellips__dot:nth-child(1) {
+	background: #FFB7B7;
 }
-.loader-ellips__dot:nth-child(2) { 
-	background: #f3c41b;  
+.loader-ellips__dot:nth-child(2) {
+	background: #55e2f5;
 }
-.loader-ellips__dot:nth-child(3) { 
-	background: #183153;  
+.loader-ellips__dot:nth-child(3) {
+	background: #FFB7B7;
 }
-.loader-ellips__dot:nth-child(4) { 
-	background: #183153;  
+.loader-ellips__dot:nth-child(4) {
+	background: #FFB7B7;
 }
 </style>

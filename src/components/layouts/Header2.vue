@@ -7,15 +7,14 @@
 							<div class="col-12 col-md-6">
 								<div class="left">
 									<ul>
-										<li><span><i class="fas fa-phone-alt"></i> Contact Number : 090 9876::3456</span></li>
-										<li><span><i class="fas fa-map-marker-alt"></i> Location : 22, South Wales, New York</span></li>
+										<li><span><i class="fas fa-phone-alt"></i> Support Number : +40 723 142 712</span></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="right">
 									<ul>
-										<li><span><i class="fas fa-calendar-check"></i> Mon - Fri : 09.00 AM to 05.00 PM</span></li>
+
 										<li class="dropdown language-select">
 											<span class="dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><i class="fas fa-globe-africa"></i> English</span>
 											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-dropdown">

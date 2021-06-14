@@ -10,13 +10,13 @@
 								<sidebar v-if="currentPath == 'change-password'"></sidebar>
 								<sidebar1 v-else-if="currentPath == 'patient-change-password'"></sidebar1>
 							</div>
-							
+
 							<div class="col-md-7 col-lg-8 col-xl-9">
 								<div class="card">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-12 col-lg-6">
-											
+
 												<!-- Change Password Form -->
 												<form>
 													<div class="form-group">
@@ -36,7 +36,7 @@
 													</div>
 												</form>
 												<!-- /Change Password Form -->
-												
+
 											</div>
 										</div>
 									</div>
@@ -45,7 +45,7 @@
 						</div>
 					</div>
 
-				</div>		
+				</div>
 				<!-- /Page Content -->
 				<layout-footer></layout-footer>
 		</div>
