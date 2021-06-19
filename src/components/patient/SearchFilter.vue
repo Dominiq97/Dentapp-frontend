@@ -6,88 +6,73 @@
 					<h4 class="card-title mb-0">Search Filter</h4>
 				</div>
 				<div class="card-body">
-				<div class="filter-widget">
-					<div class="cal-icon">
-						<input type="text" class="form-control datetimepicker" placeholder="Select Date">
-					</div>			
-				</div>
-				<div class="filter-widget">
-					<h4>Gender</h4>
-					<div>
-						<label class="custom_check">
-							<input type="checkbox" name="gender_type" checked>
-							<span class="checkmark"></span> Male Doctor
-						</label>
-					</div>
-					<div>
-						<label class="custom_check">
-							<input type="checkbox" name="gender_type">
-							<span class="checkmark"></span> Female Doctor
-						</label>
-					</div>
-				</div>
-				<div class="filter-widget">
+          <div class="form-group">
+        <label for="city">Your Country</label>
+            <select class="form-control" v-model="city">
+            <option :value="city.name" v-for="city in cityList" :key="city.id">{{city.name}}</option>
+            </select>
+ </div>
+
+        <br>
+        				<div class="filter-widget">
 					<h4>Select Specialist</h4>
 					<div>
 						<label class="custom_check">
 							<input type="checkbox" name="select_specialist" checked>
-							<span class="checkmark"></span> Urology
-						</label>
-					</div>
-					<div>
-						<label class="custom_check">
-							<input type="checkbox" name="select_specialist" checked>
-							<span class="checkmark"></span> Neurology
+							<span class="checkmark"></span> General
 						</label>
 					</div>
 					<div>
 						<label class="custom_check">
 							<input type="checkbox" name="select_specialist">
-							<span class="checkmark"></span> Dentist
+							<span class="checkmark"></span> Dental surgery
 						</label>
 					</div>
 					<div>
 						<label class="custom_check">
 							<input type="checkbox" name="select_specialist">
-							<span class="checkmark"></span> Orthopedic
+							<span class="checkmark"></span> Orthodontics
 						</label>
 					</div>
 					<div>
 						<label class="custom_check">
 							<input type="checkbox" name="select_specialist">
-							<span class="checkmark"></span> Cardiologist
+							<span class="checkmark"></span> Pedodontics
 						</label>
 					</div>
 					<div>
 						<label class="custom_check">
 							<input type="checkbox" name="select_specialist">
-							<span class="checkmark"></span> Cardiologist
+							<span class="checkmark"></span> Implantology
+						</label>
+					</div>
+					<div>
+						<label class="custom_check">
+							<input type="checkbox" name="select_specialist">
+							<span class="checkmark"></span> Periodontology
 						</label>
 					</div>
 				</div>
 					<div class="btn-search">
 						<button type="button" class="btn btn-block">Search</button>
-					</div>	
+					</div>
 				</div>
 			</div>
-		<!-- /Search Filter -->	
+		<!-- /Search Filter -->
     </div>
 </template>
-
 <script>
+let cities = require('../../assets/json/cities');
 export default {
-	mounted() {
-		if($('.datetimepicker').length > 0) {
-			$('.datetimepicker').datetimepicker({
-				format: 'DD/MM/YYYY',
-				icons: {
-					up: "fas fa-chevron-up",
-					down: "fas fa-chevron-down",
-					next: 'fas fa-chevron-right',
-					previous: 'fas fa-chevron-left'
-				}
-			});
-		}
+  name: 'search',
+  data () {
+      return {
+        city:null,
+        cityList:cities,
+      }
     },
+
+
+
 }
 </script>

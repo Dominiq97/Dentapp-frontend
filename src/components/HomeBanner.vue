@@ -7,7 +7,7 @@
 						<h6>We work to take care of your smile</h6>
 						<h1>Great Smile For Healthy Lifestyle!</h1>
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-						<a href="#" class="btn-yellow">Make an Appointment</a>
+						<a href="/patient/choose_dentist" class="btn-yellow">Make an Appointment</a>
 					</div>
 				</div>
 			</div>

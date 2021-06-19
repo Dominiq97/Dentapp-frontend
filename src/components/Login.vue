@@ -1,4 +1,3 @@
-
 <template>
 	<div class="account-page">
 		<div class="main-wrapper">
@@ -46,7 +45,7 @@
 														<a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
 													</div>
 												</div>
-												<div class="text-center dont-have">Don’t have an account? <router-link to="/register">Register</router-link></div>
+												<div class="text-center dont-have">Don’t have an account? <router-link to="/patient/register">Register</router-link></div>
 											</form>
 										</div>
 									</div>
@@ -75,14 +74,24 @@ export default {
         incorrectAuth: false
       }
     },
+  computed:{
+
+  },
 	methods: {
 		login () {
         this.$store.dispatch('userLogin', {
           username: this.username,
-          password: this.password
+          password: this.password,
         })
         .then(() => {
-          this.$router.push({ name: 'index' })
+            if (localStorage.getItem('userType')=='patient'){
+              this.$router.push({ name: 'index' })}
+            else if (localStorage.getItem('userType')=='dentist'){
+              this.$router.push({ name: 'dentistIndex' })
+            }else if (localStorage.getItem('userType')=='admin'){
+              this.$router.push({ name: 'adminIndex' })
+            }
+
         })
         .catch(err => {
           console.log(err)

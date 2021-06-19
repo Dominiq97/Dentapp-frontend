@@ -15,9 +15,9 @@ import Sidebar from '@/components/layouts/doctors/SideBar'
 import Sidebar1 from '@/components/layouts/patient/SideBar'
 import HomeBanner from '@/components/HomeBanner'
 import NewsLetter from '@/components/NewsLetter'
-import ChangePassword from '@/components/ChangePassword'
 import Loader from '@/components/Loader'
-import SearchBar from '@/components/doctor/SearchBar'
+import SearchBar from '@/components/dentist/SearchBar'
+import AdminIndex from '@/components/admin/index'
 
 
 import SearchFilter from '@/components/patient/SearchFilter'
@@ -54,12 +54,10 @@ Vue.component('sidebar1', Sidebar1);
 Vue.component('layout-footer', LayoutFooter);
 Vue.component('home-banner', HomeBanner);
 Vue.component('news-letter', NewsLetter);
-Vue.component('change-password', ChangePassword);
 Vue.component('slick', Slick);
 Vue.component('search-filter', SearchFilter);
 Vue.component('search-bar', SearchBar);
 Vue.component('loader', Loader);
-
 
 
 /* BreadCrumbs */

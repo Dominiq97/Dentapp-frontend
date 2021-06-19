@@ -7,18 +7,25 @@ export default new Vuex.Store({
   state: {
      accessToken: null,
      refreshToken: null,
-     username: null,
-     APIData: ''
+     is_dentistToken: false,
+     is_patientToken: false,
+     is_clinicToken: false,
+     APIData: '',
   },
   mutations: {
-    updateStorage (state, { access, refresh, username }) {
+    updateStorage (state, { access, refresh, is_dentist, is_patient, is_clinic }) {
       state.accessToken = access
       state.refreshToken = refresh
-      state.username = username
+      state.is_dentistToken= is_dentist
+      state.is_clinicToken = is_clinic
+      state.is_patientToken = is_patient
     },
     destroyToken (state) {
       state.accessToken = null
       state.refreshToken = null
+      state.is_dentistToken = false
+      state.is_patientToken = false
+      state.is_clinicToken = false
     }
   },
   getters: {
@@ -27,23 +34,48 @@ export default new Vuex.Store({
     },
     getUser(state){
       return state.username
-    }
+    },
+    getUserType(state){
+      if (state.is_dentistToken){
+        return 'dentist'
+      }else if (state.is_patientToken){
+        return 'patient'
+      }else if (state.is_clinicToken){
+        return 'clinic'
+      }else{
+        return 'nimic'
+      }
+    },
+
 
   },
+
+
+
   actions: {
     userLogout (context) {
       if (context.getters.loggedIn) {
           context.commit('destroyToken')
+          localStorage.setItem('userType', 'nimic')
       }
     },
     userLogin(context, usercredentials) {
       return new Promise((resolve, reject) => {
-        getAPI.post('/api-token/', {
+        getAPI.post('/api/token/', {
           username: usercredentials.username,
-          password: usercredentials.password
+          password: usercredentials.password,
         })
           .then(response => {
-            context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh, username: usercredentials.username })
+            context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh, is_dentist:response.data.is_dentist,is_clinic:response.data.is_clinic,is_patient:response.data.is_patient })
+            console.log(usercredentials.username)
+            if (response.data.is_dentist){
+              localStorage.setItem('userType', 'dentist')
+            }else if(response.data.is_patient){
+              localStorage.setItem('userType', 'patient')
+            }else if(response.data.is_clinic){
+              localStorage.setItem('userType', 'admin')
+            }
+            localStorage.setItem('token', response.data.access)
             resolve()
           })
           .catch(err => {
@@ -61,7 +93,53 @@ export default new Vuex.Store({
           email: data.email,
           is_dentist: false,
           is_clinic: false,
-          is_patient: true
+          is_patient: true,
+          firstname: "patient",
+          lastname: "patient"
+
+        })
+          .then(response => {
+            context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh})
+            resolve()
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
+    },
+    registerDentist(context, data) {
+      return new Promise((resolve, reject) => {
+        getAPI.post('/api/jwtauth/register/', {
+          username: data.username,
+          password: data.password,
+          password2: data.password2,
+          email: data.email,
+          firstname: data.firstname,
+          lastname:data.lastname,
+          is_dentist: true,
+          is_clinic: false,
+          is_patient: false
+        })
+          .then(response => {
+            context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh})
+            resolve()
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
+    },
+    registerAdmin(context, data) {
+      return new Promise((resolve, reject) => {
+        getAPI.post('/api/jwtauth/register/', {
+
+          username: data.username,
+          password: data.password,
+          password2: data.password2,
+          email: data.email,
+          is_dentist: false,
+          is_clinic: true,
+          is_patient: false
 
         })
           .then(response => {

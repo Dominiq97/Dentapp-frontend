@@ -23,84 +23,48 @@
                            <i class="fas fa-times"></i>
                        </a>
                    </div>
-                   <ul class="main-nav">
+                   <ul v-if="getType=='nimic'" class="main-nav">
+                    </ul>
+                  <ul v-else-if="getType=='dentist'" class="main-nav">
                        <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
-                           <router-link to="/index">Home </router-link>
+                           <router-link to="/index">Schedule </router-link>
                        </li>
-                       <li class="has-submenu" :class="doctorMenu ? 'active' : 'notactive'">
-                           <a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
-                               <ul class="submenu">
-                                   <li :class="currentPath == 'doctor-index' ? 'active' : 'notactive'"><router-link to="/doctor/index">Doctor Dashboard</router-link></li>
-                                   <li :class="currentPath == 'doctor-appointments' ? 'active' : 'notactive'"><router-link to="/doctor/appointments">Appointments</router-link></li>
-                                   <li :class="currentPath == 'schedule-timings' ? 'active' : 'notactive'"><router-link to="/doctor/schedule-timings">Schedule Timing</router-link></li>
-                                   <li :class="currentPath == 'my-patients' ? 'active' : 'notactive'"><router-link to="/doctor/patients">Patients List</router-link></li>
-                                   <li :class="currentPath == 'patient-profile' || currentPath == 'add-prescription' || currentPath == 'edit-prescription' || currentPath == 'add-billing' || currentPath == 'edit-billing' ? 'active' : 'notactive'"><router-link to="/doctor/patient-profile">Patients Profile</router-link></li>
-                                   <li :class="currentPath == 'messages' ? 'active' : 'notactive'"><router-link to="/doctor/messages">Chat</router-link></li>
-                                   <li :class="currentPath == 'invoices' ? 'active' : 'notactive'"><router-link to="/doctor/invoices">Invoices</router-link></li>
-                                   <li :class="currentPath == 'profile-settings' ? 'active' : 'notactive'"><router-link to="/doctor/profile-settings">Profile Settings</router-link></li>
-                                   <li :class="currentPath == 'doctor-reviews' ? 'active' : 'notactive'"><router-link to="/doctor/reviews">Reviews</router-link></li>
-                                   <li :class="currentPath == 'doctor-register' ? 'active' : 'notactive'"><router-link to="/doctor/register">Doctor Register</router-link></li>
-                               </ul>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Appointments </router-link>
                        </li>
-                         <li class="has-submenu"  :class="patientsMenu ? 'active' : 'notactive'">
-                           <a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-                           <ul class="submenu">
-                               <li class="has-submenu subdrop-menu" :class="currentPath == 'doctor-mapgrid' || currentPath == 'doctor-maplist' ? 'active' : 'notactive'">
-                                   <a href="#">Doctors</a>
-                                   <ul class="submenu">
-                                       <li :class="currentPath == 'doctor-mapgrid' ? 'active' : 'notactive'"><router-link to="/doctor/map-grid">Map Grid</router-link></li>
-                                       <li :class="currentPath == 'doctor-maplist' ? 'active' : 'notactive'"><router-link to="/doctor/map-list">Map List</router-link></li>
-                                   </ul>
-                               </li>
-                               <li :class="currentPath == 'search-doctor' ? 'active' : 'notactive'"><router-link to="/doctor/search">Search Doctor</router-link></li>
-                               <li :class="currentPath == 'doctor-profile' ? 'active' : 'notactive'"><router-link to="/doctor/profile">Doctor Profile</router-link></li>
-                               <li :class="currentPath == 'booking' ? 'active' : 'notactive'"><router-link to="/patient/booking">Booking</router-link></li>
-                               <li :class="currentPath == 'checkout' ? 'active' : 'notactive'"><router-link to="/patient/checkout">Checkout</router-link></li>
-                               <li :class="currentPath == 'booking-success' ? 'active' : 'notactive'"><router-link to="/patient/booking-success">Booking Success</router-link></li>
-                               <li :class="currentPath == 'patient-dashboard' ? 'active' : 'notactive'"><router-link to="/patient/index">Patient Dashboard</router-link></li>
-                               <li :class="currentPath == 'favourites' ? 'active' : 'notactive'"><router-link to="/patient/favourites">Favourites</router-link></li>
-                               <li :class="currentPath == 'chat' ? 'active' : 'notactive'"><router-link to="/patient/chat">Chat</router-link></li>
-                               <li :class="currentPath == 'patient-profile-settings' ? 'active' : 'notactive'"><router-link to="/patient/profile">Profile Settings</router-link></li>
-                               <li :class="currentPath == 'patient-change-password' ? 'active' : 'notactive'"><router-link to="/patient/change-password">Change Password</router-link></li>
-                           </ul>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Messages </router-link>
                        </li>
-                       <li class="has-submenu" :class="pagesMenu ? 'active' : 'notactive'">
-                           <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">My patients </router-link>
+                       </li>
+                   </ul>
+                    <ul v-else-if="getType=='admin'" class="main-nav">
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Dashboard </router-link>
+                       </li>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Clinic profile </router-link>
+                       </li>
 
-                           <ul class="submenu" :class="currentPath == 'invoices' || currentPath == 'invoice-view'   ? 'has-submenu active' : 'has-submenu notactive'">
-                               <li :class="currentPath == 'voice-call' ? 'active' : 'notactive'"><router-link to="/voice-call">Voice Call</router-link></li>
-                               <li :class="currentPath == 'video-call' ? 'active' : 'notactive'"><router-link to="/video-call">Video Call</router-link></li>
-                               <li :class="currentPath == 'doctor-search' ? 'active' : 'notactive'"><router-link to="/doctor/search">Search Doctors</router-link></li>
-                               <li :class="currentPath == 'calendar' ? 'active' : 'notactive'"><router-link to="/calendar">Calendar</router-link></li>
-                               <li :class="currentPath == 'componentss' ? 'active' : 'notactive'"><router-link to="/components">Components</router-link></li>
-                               <li class="has-submenu subdrop-menu" :class="currentPath == 'invoices' || currentPath == 'invoice-view' ? 'active' : 'notactive'">
-                                   <!-- <router-link to="/doctor/invoices">Invoices</router-link> -->
-                                   <a href="#">Invoices</a>
-                                   <ul class="submenu">
-                                       <li :class="currentPath == 'invoices' ? 'active' : 'notactive'"><router-link to="/doctor/invoices">Invoices</router-link></li>
-                                       <li :class="currentPath == 'invoice-view' ? 'active' : 'notactive'"><router-link to="/invoice-view">Invoice View</router-link></li>
-                                   </ul>
-                               </li>
-                               <li :class="currentPath == 'blank' ? 'active' : 'notactive'"><router-link to="/blank">Starter Page</router-link></li>
-                               <li :class="currentPath == 'logins' ? 'active' : 'notactive'"><router-link to="/login">Login</router-link></li>
-                               <li :class="currentPath == 'patient-register' ? 'active' : 'notactive'"><router-link to="/patient/register">Register</router-link></li>
-                               <li :class="currentPath == 'forgot-password' ? 'active' : 'notactive'"><router-link to="/forgot-password">Forgot Password</router-link></li>
-                           </ul>
-                       </li>
-                       <li class="has-submenu" :class="blogMenu ? 'active' : 'notactive'">
-                           <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
-                           <ul class="submenu">
-                               <li :class="currentPath == 'blog-list' ? 'active' : 'notactive'"><router-link to="/doctor/blog-list">Blog List</router-link></li>
-                               <li :class="currentPath == 'blog-grid'  ? 'active' : 'notactive'"><router-link to="/doctor/blog-grid">Blog Grid</router-link></li>
-                               <li :class="currentPath == 'blog-details'  ? 'active' : 'notactive'"><router-link to="/doctor/blog-details">Blog Details</router-link></li>
-                           </ul>
-                       </li>
-                        <li>
-                          <router-link to=""  @click.native="dashboard(1)" >Admin</router-link>
-                       </li>
                        <li class="login-link">
                            <router-link to="/login">Logout</router-link>
                        </li>
+                   </ul>
+                   <ul v-else-if="getType=='patient'" class="main-nav">
+                     <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/patient/search_dentist">Search dentist </router-link>
+                       </li>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">My Appointments </router-link>
+                       </li>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Profile </router-link>
+                       </li>
+                       <li class="has-submenu" :class=" homeMenu ? 'active' : 'notactive'">
+                           <router-link to="/index">Messages </router-link>
+                       </li>
+
                    </ul>
                </div>
                <ul class="nav header-navbar-rht">
@@ -119,6 +83,7 @@
 <script>
 
 export default {
+
    mounted() {
        var $wrapper = $('.main-wrapper');
        $('.main-nav a').on('click', function(e) {
@@ -156,11 +121,17 @@ export default {
 
    },
    computed: {
+       getType(){
+         return localStorage.getItem('userType')
+       },
        isLoggedIn(){
            return this.$store.getters.loggedIn;
        },
        getUser(){
          return this.$store.getters.getUser;
+       },
+       getUserType(){
+         return this.$store.getters.getUserType;
        },
        currentPath() {
            return this.$route.name

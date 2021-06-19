@@ -1,7 +1,6 @@
 <template>
     <div class="main-wrapper">
-        <layout-header2></layout-header2>
-        <breadcrumb></breadcrumb>
+        <layout-header></layout-header>
         <!-- Page Content -->
 			<div class="content">
 				<div class="container-fluid">
@@ -10,7 +9,7 @@
 						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
                             <sidebar></sidebar>
 						</div>
-						
+
 						<div class="col-md-7 col-lg-8 col-xl-9">
 							<div class="row">
 								<div class="col-md-12">
@@ -31,7 +30,7 @@
 														</div>
 													</div>
 												</div>
-												
+
 												<div class="col-md-12 col-lg-4">
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar2">
@@ -46,7 +45,7 @@
 														</div>
 													</div>
 												</div>
-												
+
 												<div class="col-md-12 col-lg-4">
 														<div class="dash-widget">
 														<div class="circle-bar circle-bar3">
@@ -66,12 +65,12 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12">
 									<h4 class="mb-4">Patient Appoinment</h4>
 									<div class="appointment-tab">
-									
+
 										<!-- Appointment Tab -->
 										<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
 											<li class="nav-item">
@@ -79,12 +78,12 @@
 											</li>
 											<li class="nav-item">
 												<a class="nav-link" href="#today-appointments" data-toggle="tab">Today</a>
-											</li> 
+											</li>
 										</ul>
 										<!-- /Appointment Tab -->
-										
+
 										<div class="tab-content">
-										
+
 											<!-- Upcoming Appointment Tab -->
 											<div class="tab-pane show active" id="upcoming-appointments">
 												<div class="card card-table mb-0">
@@ -118,7 +117,7 @@
 																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 																					<i class="far fa-eye"></i> View
 																				</a>
-																				
+
 																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
 																					<i class="fas fa-check"></i> Accept
 																				</a>
@@ -129,13 +128,13 @@
 																		</td>
 																	</tr>
 																</tbody>
-															</table>		
+															</table>
 														</div>
 													</div>
 												</div>
 											</div>
 											<!-- /Upcoming Appointment Tab -->
-									   
+
 											<!-- Today Appointment Tab -->
 											<div class="tab-pane" id="today-appointments">
 												<div class="card card-table mb-0">
@@ -169,7 +168,7 @@
 																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
 																					<i class="far fa-eye"></i> View
 																				</a>
-																				
+
 																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
 																					<i class="fas fa-check"></i> Accept
 																				</a>
@@ -179,15 +178,15 @@
 																			</div>
 																		</td>
 																	</tr>
-																
+
 																</tbody>
-															</table>		
-														</div>	
-													</div>	
-												</div>	
+															</table>
+														</div>
+													</div>
+												</div>
 											</div>
 											<!-- /Today Appointment Tab -->
-											
+
 										</div>
 									</div>
 								</div>
@@ -195,7 +194,7 @@
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
 			<!-- /Page Content -->
 		<layout-footer></layout-footer>
     </div>
@@ -264,7 +263,7 @@ export default {
 				});
 			}
 		});
-		  
+
 	},
 }
 </script>
