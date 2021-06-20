@@ -31,7 +31,7 @@
 													<i class="fas fa-star"></i>
 												</div>
 
-												<div v-for="(dent,index) in dentist.speciality" :key="index" class="clinic-services">
+												<div v-for="(dent,i) in dentist.speciality" :key="i" class="clinic-services">
 													<span>{{dent.name}}</span>
 												</div>
 											</div>
@@ -49,9 +49,7 @@
 							<!-- /Doctor Widget -->
 
 
-							<div class="load-more text-center">
-								<a class="btn btn-primary btn-sm" href="javascript:void(0);">Load More</a>
-							</div>
+
 						</div>
 					</div>
 

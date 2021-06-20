@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { getAPI } from './axios-api'
+import DentistDataService from './services/DentistDataService'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -53,6 +54,7 @@ export default new Vuex.Store({
 
 
   actions: {
+
     userLogout (context) {
       if (context.getters.loggedIn) {
           context.commit('destroyToken')
@@ -68,6 +70,12 @@ export default new Vuex.Store({
           .then(response => {
             context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh, is_dentist:response.data.is_dentist,is_clinic:response.data.is_clinic,is_patient:response.data.is_patient })
             console.log(usercredentials.username)
+            localStorage.setItem('username', usercredentials.username)
+            localStorage.setItem('password', usercredentials.password)
+            localStorage.setItem('loggedId', response.data.pk)
+            localStorage.setItem('loggedPat', DentistDataService.getPatient(localStorage.getItem('loggedId')))
+
+
             if (response.data.is_dentist){
               localStorage.setItem('userType', 'dentist')
             }else if(response.data.is_patient){
@@ -83,6 +91,34 @@ export default new Vuex.Store({
           })
       })
     },
+    // getPatientId(){
+    //   id = DentistDataService.getPatient(respo)
+
+    // },
+
+
+    addApp(context, data) {
+
+      return new Promise((resolve, reject) => {
+        getAPI.post('/api/appointments/', {
+
+          date_time: data.date_time,
+          patient: data.patient,
+          dentist: data.dentist,
+          status: "pending",
+
+
+        })
+          .then(response => {
+            context.commit('updateStorage', { access: response.data.access, refresh: response.data.refresh})
+            resolve()
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
+    }
+    ,
     registerUser(context, data) {
       return new Promise((resolve, reject) => {
         getAPI.post('/api/jwtauth/register/', {

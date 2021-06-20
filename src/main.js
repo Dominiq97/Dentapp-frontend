@@ -18,10 +18,10 @@ import NewsLetter from '@/components/NewsLetter'
 import Loader from '@/components/Loader'
 import SearchBar from '@/components/dentist/SearchBar'
 import AdminIndex from '@/components/admin/index'
-
-
+import Datepicker from 'vuejs-datepicker';
 import SearchFilter from '@/components/patient/SearchFilter'
-
+import VueTimepicker from 'vue2-timepicker'
+import 'vue2-timepicker/dist/VueTimepicker.css'
 /** Breadcrumbs **/
 
 let Bootstrap = require('bootstrap')
@@ -45,7 +45,6 @@ Vue.config.productionTip = false
 Vue.component('layout-header', LayoutHeader);
 Vue.component('top-header', TopHeader);
 Vue.component('header-admin', HeaderAdmin);
-
 Vue.component('sidebar-admin', SidebarAdmin);
 Vue.component('layout-header2', LayoutHeader2);
 Vue.component('layout-header3', LayoutHeader3);
@@ -58,7 +57,8 @@ Vue.component('slick', Slick);
 Vue.component('search-filter', SearchFilter);
 Vue.component('search-bar', SearchBar);
 Vue.component('loader', Loader);
-
+Vue.component('datepicker', Datepicker)
+Vue.component('vue-timepicker',VueTimepicker)
 
 /* BreadCrumbs */
 
@@ -68,7 +68,7 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App,BarChart,
+  components: { App,BarChart,Datepicker,VueTimepicker,
     LineChart, },
   template: '<App/>'
 })

@@ -44,11 +44,6 @@ const router = new Router({
       component: Login
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
       path: '/patient/index',
       name: 'index',
       component: Index,
@@ -93,6 +88,11 @@ const router = new Router({
         path: '/patient/booking/:id',
         name: 'addBooking',
         component: addBooking,
+      },
+      {
+        path: '/patient/booking_success',
+        name: 'booking_success',
+        component: BookingSuccess,
       },
 
   ],

@@ -29,181 +29,34 @@
 											  <p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i>  {{clin.city}}</p>
                       </div>
 										</div>
-									</div>
-								</div>
+									</div ><br><br>
+                <form v-on:submit.prevent="saveApp">
+                  <datepicker :bootstrap-styling="true" :disabled-dates="disabledDates"
+                  format="yyyy-MM-dd"
+                  id="appDate"
+                  required
+                  v-model="app.date"
+                  name="appDate"></datepicker><br>
+                  <vue-timepicker
+                  :minute-interval="30"
+                  :hour-range="[[8, 18]]"
+                  class="form-control"
+                  id="appTime"
+                  required
+                  v-model="app.time"
+                  name="appTime"></vue-timepicker>
+                  <div class="submit-section proceed-btn text-right"><br>
+								    <button type="submit" class="btn btn-primary submit-btn">Make the appointment offer</button>
+                  </div>
+                </form>
+                </div>
+
 							</div>
 							<div class="row">
-								<div class="col-12 col-sm-4 col-md-6">
-									<h4 class="mb-1">11 November 2019</h4>
-									<p class="text-muted">Monday</p>
-								</div>
-								<div class="col-12 col-sm-8 col-md-6 text-sm-right">
-									<div class="bookingrange btn btn-white btn-sm mb-3">
-										<i class="far fa-calendar-alt mr-2"></i>
-										<span></span>
-										<i class="fas fa-chevron-down ml-2"></i>
-									</div>
-								</div>
-                            </div>
-							<!-- Schedule Widget -->
-							<div class="card booking-schedule schedule-widget">
 
-								<!-- Schedule Header -->
-								<div class="schedule-header">
-									<div class="row">
-										<div class="col-md-12">
+              </div>
 
-											<!-- Day Slot -->
-											<div class="day-slot">
-												<ul>
-													<li class="left-arrow">
-														<a href="">
-															<i class="fa fa-chevron-left"></i>
-														</a>
-													</li>
-													<li>
-														<span>Mon</span>
-														<span class="slot-date">11 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Tue</span>
-														<span class="slot-date">12 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Wed</span>
-														<span class="slot-date">13 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Thu</span>
-														<span class="slot-date">14 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Fri</span>
-														<span class="slot-date">15 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Sat</span>
-														<span class="slot-date">16 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li>
-														<span>Sun</span>
-														<span class="slot-date">17 Nov <small class="slot-year">2021</small></span>
-													</li>
-													<li class="right-arrow">
-														<a href="">
-															<i class="fa fa-chevron-right"></i>
-														</a>
-													</li>
-												</ul>
-											</div>
-											<!-- /Day Slot -->
 
-										</div>
-									</div>
-								</div>
-								<!-- /Schedule Header -->
-
-								<!-- Schedule Content -->
-								<div class="schedule-cont">
-									<div class="row">
-										<div class="col-md-12">
-
-											<!-- Time Slot -->
-											<div class="time-slot">
-												<ul class="clearfix">
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing selected" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-													<li>
-														<a class="timing" href="#">
-															<span>9:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>10:00</span> <span>AM</span>
-														</a>
-														<a class="timing" href="#">
-															<span>11:00</span> <span>AM</span>
-														</a>
-													</li>
-												</ul>
-											</div>
-											<!-- /Time Slot -->
-
-										</div>
-									</div>
-								</div>
-								<!-- /Schedule Content -->
-
-							</div>
-							<!-- /Schedule Widget -->
-
-							<!-- Submit Section -->
-							<div class="submit-section proceed-btn text-right">
-								<router-link to="/patient/checkout" class="btn btn-primary submit-btn">Proceed to Pay</router-link>
-							</div>
 							<!-- /Submit Section -->
 
 						</div>
@@ -216,24 +69,83 @@
     </div>
 </template>
 <script>
+import moment from 'moment';
 import DentistDataService from "../../services/DentistDataService";
 export default {
+  components: {
+    },
     data(){
+      const today = new Date()
+      const tomorrow = new Date(today)
+      tomorrow.setDate(tomorrow.getDate() + 1)
+
       return {
-        currentDentist:null
+
+        app: {
+          date: tomorrow,
+          time: "12:00",
+        },
+        disabledDates: { to: new Date(),},
+        patId : DentistDataService.getPatient(localStorage.getItem('loggedId')),
+        currentDentist:null,
+        currentPatient:null,
+        date: new Date(2016, 9,  16),
+        value: '23:11:00'
       }
     },
+  created(){
+    this.getPatient();
+
+  },
+
 	methods: {
+    format_date(value){
+         if (value) {
+           return moment(String(value)).format('yyyy-MM-DD')
+          }
+      },
+
+
      getDentist(id) {
       DentistDataService.get(id)
         .then(response => {
           this.currentDentist = response.data;
-          console.log(response.data);
+
         })
         .catch(e => {
           console.log(e);
         });
     },
+    saveApp() {
+      // let time = this.app.time.getTime()
+      var data = {
+        date_time: this.format_date(this.app.date)+'T'+this.app.time+':00'+'Z',
+        dentist: this.currentDentist.pk,
+        patient: this.currentPatient,
+        status:"pending"
+      };
+      DentistDataService.create(data)
+        .then(response => {
+          this.app.id = response.data.id;
+          this.submitted = true;
+          this.$router.push({ name: 'booking_success' })
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    getPatient(id){
+      DentistDataService.getPatient(localStorage.getItem('loggedId'))
+        .then(response => {
+          this.currentPatient = response.data.pk;
+          console.log(this.currentPatient);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+
+
 	},
   mounted() {
     this.getDentist(this.$route.params.id);
