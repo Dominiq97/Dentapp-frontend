@@ -13,8 +13,20 @@ class DentistDataService {
     return http.get(`/api/patients/${id}`);
   }
 
+  getDentist(id) {
+    return http.get(`/api/dentists/${id}`);
+  }
+
   create(data) {
     return http.post("/api/appointments/", data);
+  }
+
+  getAppointmentsAfterDentist(id) {
+    return http.get(`/api/appointments/${id}`);
+  }
+
+  change_status(id){
+    return http.put(`/api/appointment/confirmation/${id}`);
   }
 
   // update(id, data) {

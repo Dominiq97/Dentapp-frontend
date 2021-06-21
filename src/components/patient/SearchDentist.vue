@@ -19,7 +19,7 @@
 										<div class="doc-info-left">
 											<div class="doc-info-cont">
 												<h4 class="doc-name">Dr. {{dentist.firstname}} {{dentist.lastname}} </h4>
-                        <div v-for="(clin, index) in dentist.clinics" :key="index">
+                        <div v-for="(clin, ind) in dentist.clinics" :key="'A'+ind">
 												  <p class="doc-department">{{clin.city}} - {{clin.name}} </p>
                           <p class="doc-department">{{clin.address}}</p>
                         </div>
@@ -31,7 +31,7 @@
 													<i class="fas fa-star"></i>
 												</div>
 
-												<div v-for="(dent,i) in dentist.speciality" :key="i" class="clinic-services">
+												<div v-for="(dent,ind) in dentist.speciality" :key="'B'+ind" class="clinic-services">
 													<span>{{dent.name}}</span>
 												</div>
 											</div>
@@ -63,14 +63,12 @@
 
 <script>
 import DentistDataService from "../../services/DentistDataService";
-import searchresults from '../../assets/json/patient/searchresults.json';
 
 export default {
 	data() {
 		return {
       currentDentist:null,
       dentists:[],
-			searchresults: searchresults,
       currentIndex: -1,
 
 		}

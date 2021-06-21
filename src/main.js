@@ -11,7 +11,6 @@ import SidebarAdmin from '@/components/layouts/SidebarAdmin'
 import LayoutHeader2 from '@/components/layouts/Header2'
 import LayoutHeader3 from '@/components/layouts/patient/Header'
 import LayoutFooter from '@/components/layouts/Footer'
-import Sidebar from '@/components/layouts/doctors/SideBar'
 import Sidebar1 from '@/components/layouts/patient/SideBar'
 import HomeBanner from '@/components/HomeBanner'
 import NewsLetter from '@/components/NewsLetter'
@@ -22,6 +21,7 @@ import Datepicker from 'vuejs-datepicker';
 import SearchFilter from '@/components/patient/SearchFilter'
 import VueTimepicker from 'vue2-timepicker'
 import 'vue2-timepicker/dist/VueTimepicker.css'
+import moment from 'moment'
 /** Breadcrumbs **/
 
 let Bootstrap = require('bootstrap')
@@ -32,6 +32,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 }else {
   require('./assets/css/style.css');
 }
+
 
 import './assets/plugins/fontawesome/css/fontawesome.min.css'
 import './assets/plugins/fontawesome/css/all.min.css'
@@ -48,7 +49,6 @@ Vue.component('header-admin', HeaderAdmin);
 Vue.component('sidebar-admin', SidebarAdmin);
 Vue.component('layout-header2', LayoutHeader2);
 Vue.component('layout-header3', LayoutHeader3);
-Vue.component('sidebar', Sidebar);
 Vue.component('sidebar1', Sidebar1);
 Vue.component('layout-footer', LayoutFooter);
 Vue.component('home-banner', HomeBanner);
@@ -60,8 +60,14 @@ Vue.component('loader', Loader);
 Vue.component('datepicker', Datepicker)
 Vue.component('vue-timepicker',VueTimepicker)
 
+
 /* BreadCrumbs */
 
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format('MM/DD/YYYY hh:mm')
+  }
+});
 
 
 new Vue({
@@ -72,3 +78,4 @@ new Vue({
     LineChart, },
   template: '<App/>'
 })
+

@@ -1,269 +1,229 @@
 <template>
-    <div class="main-wrapper">
-        <layout-header></layout-header>
-        <!-- Page Content -->
-			<div class="content">
-				<div class="container-fluid">
+<div class="main-wrapper">
+    <layout-header></layout-header>
+    <!-- Page Content -->
 
-					<div class="row">
-						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
-                            <sidebar></sidebar>
-						</div>
+  <div class="content">
+    <div class="container-fluid">
 
-						<div class="col-md-7 col-lg-8 col-xl-9">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="card dash-card">
-										<div class="card-body">
-											<div class="row">
-												<div class="col-md-12 col-lg-4">
-													<div class="dash-widget dct-border-rht">
-														<div class="circle-bar circle-bar1">
-															<div class="circle-graph1" data-percent="75">
-																<img src="@/assets/img/icon-01.png" class="img-fluid" alt="patient">
-															</div>
-														</div>
-														<div class="dash-widget-info">
-															<h6>Total Patient</h6>
-															<h3>1500</h3>
-															<p class="text-muted">Till Today</p>
-														</div>
-													</div>
-												</div>
+      <div class="row">
+        <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 
-												<div class="col-md-12 col-lg-4">
-													<div class="dash-widget dct-border-rht">
-														<div class="circle-bar circle-bar2">
-															<div class="circle-graph2" data-percent="65">
-																<img src="@/assets/img/icon-02.png" class="img-fluid" alt="Patient">
-															</div>
-														</div>
-														<div class="dash-widget-info">
-															<h6>Today Patient</h6>
-															<h3>160</h3>
-															<p class="text-muted">06, Nov 2019</p>
-														</div>
-													</div>
-												</div>
+        </div>
 
-												<div class="col-md-12 col-lg-4">
-														<div class="dash-widget">
-														<div class="circle-bar circle-bar3">
-															<div class="circle-graph3" data-percent="50">
-																<img src="@/assets/img/icon-03.png" class="img-fluid" alt="Patient">
-															</div>
-														</div>
-														<div class="dash-widget-info">
-															<h6>Appoinments</h6>
-															<h3>85</h3>
-															<p class="text-muted">06, Apr 2019</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+        <div class="col-md-7 col-lg-12 ">
+          <div class="row">
 
-							<div class="row">
-								<div class="col-md-12">
-									<h4 class="mb-4">Patient Appoinment</h4>
-									<div class="appointment-tab">
+            <div class="col-md-12">
+              <div class="widget-profile pro-widget-content">
+            <div class="profile-info-widget">
+                <a href="#" class="booking-doc-img">
+                    <img :src="require('@/assets/img/dentists/avatars/'+currentDentist.avatar.split('/').slice(-1)[0])" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                    <h3>Dr. {{currentDentist.firstname}} {{currentDentist.lastname}}</h3>
 
-										<!-- Appointment Tab -->
-										<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
-											<li class="nav-item">
-												<a class="nav-link active" href="#upcoming-appointments" data-toggle="tab">Upcoming</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link" href="#today-appointments" data-toggle="tab">Today</a>
-											</li>
-										</ul>
-										<!-- /Appointment Tab -->
+                    <div class="patient-details">
+                        <h5 class="mb-0">{{currentDentist.degree}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+              <div class="card dash-card">
 
-										<div class="tab-content">
+                <div class="card-body">
+                  <div class="row">
 
-											<!-- Upcoming Appointment Tab -->
-											<div class="tab-pane show active" id="upcoming-appointments">
-												<div class="card card-table mb-0">
-													<div class="card-body">
-														<div class="table-responsive">
-															<table class="table table-hover table-center mb-0">
-																<thead>
-																	<tr>
-																		<th>Patient Name</th>
-																		<th>Appt Date</th>
-																		<th>Purpose</th>
-																		<th>Type</th>
-																		<th class="text-center">Paid Amount</th>
-																		<th></th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr v-for="item in upcomingpatients" :key="item.id">
-																		<td>
-																			<h2 class="table-avatar">
-																				<a href="/patient-profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="require('@/assets/img/patients/'+item.image)" alt="User Image"></a>
-																				<a href="/patient-profile">{{item.name}}<span>{{item.patient_id}}</span></a>
-																			</h2>
-																		</td>
-																		<td>{{item.appt_date}} <span class="d-block text-info">{{item.appt_time}}</span></td>
-																		<td>{{item.purpose}}</td>
-																		<td>{{item.type}}</td>
-																		<td class="text-center">{{item.paid_amount}}</td>
-																		<td class="text-right">
-																			<div class="table-action">
-																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-																					<i class="far fa-eye"></i> View
-																				</a>
+                    <div class="col-md-12 col-lg-4">
 
-																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-																					<i class="fas fa-check"></i> Accept
-																				</a>
-																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-																					<i class="fas fa-times"></i> Cancel
-																				</a>
-																			</div>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /Upcoming Appointment Tab -->
+                      <div class="dash-widget dct-border-rht">
 
-											<!-- Today Appointment Tab -->
-											<div class="tab-pane" id="today-appointments">
-												<div class="card card-table mb-0">
-													<div class="card-body">
-														<div class="table-responsive">
-															<table class="table table-hover table-center mb-0">
-																<thead>
-																	<tr>
-																		<th>Patient Name</th>
-																		<th>Appt Date</th>
-																		<th>Purpose</th>
-																		<th>Type</th>
-																		<th class="text-center">Paid Amount</th>
-																		<th></th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr v-for="item in todaypatients" :key="item.id">
-																		<td>
-																			<h2 class="table-avatar">
-																				<router-link to="/doctor/patient-profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="require('@/assets/img/patients/'+item.image)" alt="User Image"></router-link>
-																				<router-link to="/doctor/patient-profile">{{item.name}}<span>{{item.patient_id}}</span></router-link>
-																			</h2>
-																		</td>
-																		<td>{{item.appt_date}}<span class="d-block text-info">{{item.appt_time}}</span></td>
-																		<td>{{item.purpose}}</td>
-																		<td>{{item.type}}</td>
-																		<td class="text-center">{{item.paid_amount}}</td>
-																		<td class="text-right">
-																			<div class="table-action">
-																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-																					<i class="far fa-eye"></i> View
-																				</a>
+                        <div class="circle-bar circle-bar1">
 
-																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-																					<i class="fas fa-check"></i> Accept
-																				</a>
-																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-																					<i class="fas fa-times"></i> Cancel
-																				</a>
-																			</div>
-																		</td>
-																	</tr>
+                          <div class="circle-graph1" data-percent="75">
+                            <img src="@/assets/img/icon-01.png" class="img-fluid" alt="patient">
+                          </div>
+                        </div>
+                        <div class="dash-widget-info">
+                          <h6>Total Patient</h6>
+                          <h3>1500</h3>
+                          <p class="text-muted">Till Today</p>
+                        </div>
+                      </div>
+                    </div>
 
-																</tbody>
-															</table>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /Today Appointment Tab -->
+                    <div class="col-md-12 col-lg-4">
+                      <div class="dash-widget dct-border-rht">
+                        <div class="circle-bar circle-bar2">
+                          <div class="circle-graph2" data-percent="65">
+                            <img src="@/assets/img/icon-02.png" class="img-fluid" alt="Patient">
+                          </div>
+                        </div>
+                        <div class="dash-widget-info">
+                          <h6>Today Patient</h6>
+                          <h3>160</h3>
+                          <p class="text-muted">06, Nov 2019</p>
+                        </div>
+                      </div>
+                    </div>
 
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Page Content -->
-		<layout-footer></layout-footer>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="dash-widget">
+                        <div class="circle-bar circle-bar3">
+                          <div class="circle-graph3" data-percent="50">
+                            <img src="@/assets/img/icon-03.png" class="img-fluid" alt="Patient">
+                          </div>
+                        </div>
+                        <div class="dash-widget-info">
+                          <h6>Appoinments</h6>
+                          <h3>85</h3>
+                          <p class="text-muted">06, Apr 2019</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="mb-4">Patient Appoinment</h4>
+              <div class="appointment-tab">
+
+                <!-- Appointment Tab -->
+                <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#upcoming-appointments" data-toggle="tab">Upcoming Appointments</a>
+                  </li>
+
+                </ul>
+                <!-- /Appointment Tab -->
+
+                <div class="tab-content">
+
+                  <!-- Upcoming Appointment Tab -->
+                  <div class="tab-pane show active" id="upcoming-appointments">
+                    <div class="card card-table mb-0">
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover table-center mb-0">
+                            <thead>
+                              <tr>
+                                <th>Patient Name</th>
+                                <th>Date </th>
+                                <th>Status</th>
+                                <th class="text-center">Is Urgent?</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr v-for="item in apps" :key="item.id">
+                                <td>
+                                  <h2 class="table-avatar">
+                                    <a class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="require('@/assets/img/patients/avatars/'+item.patient.avatar.split('/').slice(-1)[0])" alt="User Image"></a>
+                                    <a>{{item.patient.user.firstname}}<span>{{item.patient.user.lastname}}</span></a>
+                                  </h2>
+                                </td>
+                                <td>{{item.date_time | formatDate }} <span class="d-block text-info">{{item.appt_time}}</span></td>
+
+                                <td>{{item.status}}</td>
+
+                                <td v-if="item.is_urgent" class="text-center">Yes</td>
+                                <td v-else class="text-center">No</td>
+
+                                <td class="text-right">
+                                  <div class="table-action">
+                                    <div v-if="item.status==='pending'">
+                                      <button @click="accept(item)" class="btn btn-sm bg-success-light">
+                                        <i class="fas fa-check"></i> Accept
+                                      </button>
+                                      <button @click="decline(item)" class="btn btn-sm bg-danger-light">
+                                        <i class="fas fa-times"></i> Decline
+                                      </button>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Upcoming Appointment Tab -->
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- /Page Content -->
+<layout-footer></layout-footer>
+</div>
 </template>
 
 <script>
-import upcomingpatients from '../../assets/json/doctor/upcomingpatients.json'
-import todaypatients from '../../assets/json/doctor/todaypatients.json'
+import DentistDataService from "../../services/DentistDataService";
+
+
 
 export default {
+
+
 	data() {
 		return {
-			upcomingpatients: upcomingpatients,
-			todaypatients: todaypatients
+      currentDentist:'',
+      id:null,
+      patients:[],
+      apps:[],
+      all:null,
+
 		}
 	},
-	mounted() {
-			$('.circle-bar1').each(function () {
-			var elementPos = $(this).offset().top;
-			var topOfWindow = $(window).scrollTop();
-			var percent = $(this).find('.circle-graph1').attr('data-percent');
-			var animate = $(this).data('animate');
-			if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
-				$(this).data('animate', true);
-				$(this).find('.circle-graph1').circleProgress({
-					value: percent / 100,
-					size : 400,
-					thickness: 30,
-					fill: {
-						color: '#da3f81'
-					}
-				});
-			}
-		});
-			$('.circle-bar2').each(function () {
-			var elementPos = $(this).offset().top;
-			var topOfWindow = $(window).scrollTop();
-			var percent = $(this).find('.circle-graph2').attr('data-percent');
-			var animate = $(this).data('animate');
-			if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
-				$(this).data('animate', true);
-				$(this).find('.circle-graph2').circleProgress({
-					value: percent / 100,
-					size : 400,
-					thickness: 30,
-					fill: {
-						color: '#68dda9'
-					}
-				});
-			}
-		});
-		$('.circle-bar3').each(function () {
-			var elementPos = $(this).offset().top;
-			var topOfWindow = $(window).scrollTop();
-			var percent = $(this).find('.circle-graph3').attr('data-percent');
-			var animate = $(this).data('animate');
-			if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
-				$(this).data('animate', true);
-				$(this).find('.circle-graph3').circleProgress({
-					value: percent / 100,
-					size : 400,
-					thickness: 30,
-					fill: {
-						color: '#1b5a90'
-					}
-				});
-			}
-		});
+  created(){
+    this.getDentist(localStorage.getItem('loggedId'))
 
-	},
+  },
+	 methods: {
+    getDentist(id) {
+      DentistDataService.getDentist(id)
+        .then(response => {
+          this.currentDentist = response.data;
+          this.id = this.currentDentist.pk;
+          this.retrieveApps(this.id)
+          localStorage.setItem('currentDentist',this.currentDentist)
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    retrieveApps(id) {
+      DentistDataService.getAppointmentsAfterDentist(id)
+        .then(response => {
+          this.apps = response.data;
+          console.log(response.data);
+
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+
+    accept(app){
+      app.status = "confirmed"
+    },
+    decline(app){
+      app.status = "rejected"
+    }
+
+   }
 }
+
 </script>
+

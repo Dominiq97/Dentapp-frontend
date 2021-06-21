@@ -48,6 +48,7 @@
                   <div class="submit-section proceed-btn text-right"><br>
 								    <button type="submit" class="btn btn-primary submit-btn">Make the appointment offer</button>
                   </div>
+                  <p v-if="incorrectTime"> An appointment is already scheduled at this dentist for this time.</p>
                 </form>
                 </div>
 
@@ -90,7 +91,8 @@ export default {
         currentDentist:null,
         currentPatient:null,
         date: new Date(2016, 9,  16),
-        value: '23:11:00'
+        value: '23:11:00',
+        incorrectTime:false
       }
     },
   created(){
@@ -105,8 +107,7 @@ export default {
           }
       },
 
-
-     getDentist(id) {
+      getDentist(id) {
       DentistDataService.get(id)
         .then(response => {
           this.currentDentist = response.data;
@@ -129,9 +130,13 @@ export default {
           this.app.id = response.data.id;
           this.submitted = true;
           this.$router.push({ name: 'booking_success' })
+
         })
         .catch(e => {
           console.log(e);
+          if (e="appointment with this date time already exists."){
+            this.incorrectTime=true;
+          }
         });
     },
     getPatient(id){

@@ -19,6 +19,7 @@
     "simple-vue2-datetimepicker": "^2.3.1",
     "v-calendar": "^2.3.0",
     "vue": "^2.5.2",
+    "vue-cookies": "^1.7.4",
     "vue-custom-scrollbar": "^1.4.0",
     "vue-feather-icons": "^5.1.0",
     "vue-meta": "^2.4.0",
