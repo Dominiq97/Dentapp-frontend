@@ -135,10 +135,10 @@
                                 <td class="text-right">
                                   <div class="table-action">
                                     <div v-if="item.status==='pending'">
-                                      <button @click="accept(item)" class="btn btn-sm bg-success-light">
+                                      <button @click="accept(item.pk,item)" type="submit" class="btn btn-sm bg-success-light">
                                         <i class="fas fa-check"></i> Accept
                                       </button>
-                                      <button @click="decline(item)" class="btn btn-sm bg-danger-light">
+                                      <button @click="decline(item.pk,item)" type="submit" class="btn btn-sm bg-danger-light">
                                         <i class="fas fa-times"></i> Decline
                                       </button>
                                     </div>
@@ -183,6 +183,7 @@ export default {
       patients:[],
       apps:[],
       all:null,
+      state:null
 
 		}
 	},
@@ -215,11 +216,30 @@ export default {
         });
     },
 
-    accept(app){
+    accept(id,app){
       app.status = "confirmed"
+      DentistDataService.accept(id)
+      .then(response => {
+          this.status = response.data;
+          console.log("status for "+id+" accepted");
+
+        })
+        .catch(e => {
+          console.log(e);
+        });
+
     },
-    decline(app){
+    decline(id,app){
       app.status = "rejected"
+      DentistDataService.decline(id)
+      .then(response => {
+          this.status = response.data;
+          console.log("status for "+id+" rejected");
+
+        })
+        .catch(e => {
+          console.log(e);
+        });
     }
 
    }

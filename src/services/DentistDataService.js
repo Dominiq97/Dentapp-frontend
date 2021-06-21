@@ -25,8 +25,12 @@ class DentistDataService {
     return http.get(`/api/appointments/${id}`);
   }
 
-  change_status(id){
-    return http.put(`/api/appointment/confirmation/${id}`);
+  accept(id){
+    return http.post(`/api/appointment/accept/${id}`);
+  }
+
+  decline(id){
+    return http.post(`/api/appointment/decline/${id}`);
   }
 
   // update(id, data) {
