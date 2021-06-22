@@ -66,7 +66,23 @@ class DentistDataService {
   }
 
   get_patients_pending(id){
-    return http.get(`api/appointments/pending/${id}`)
+    return http.get(`/api/appointments/pending/${id}`)
+  }
+
+  get_clinic(id){
+    return http.get(`/api/clinics/${id}`)
+  }
+
+  get_dentists_of_clinic(id){
+    return http.get(`/api/dentists_of_clinic/${id}`)
+  }
+
+  get_appointments_of_clinic(id){
+    return http.get(`/api/appointments_of_clinic/${id}`)
+  }
+
+  get_patients_of_clinic(id){
+    return http.get(`/api/patients_of_clinic/${id}`)
   }
 
 

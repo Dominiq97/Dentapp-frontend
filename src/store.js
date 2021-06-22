@@ -47,14 +47,8 @@ export default new Vuex.Store({
         return 'nimic'
       }
     },
-
-
   },
-
-
-
   actions: {
-
     userLogout (context) {
       if (context.getters.loggedIn) {
           context.commit('destroyToken')
@@ -91,11 +85,6 @@ export default new Vuex.Store({
           })
       })
     },
-    // getPatientId(){
-    //   id = DentistDataService.getPatient(respo)
-
-    // },
-
 
     addApp(context, data) {
 
@@ -173,6 +162,9 @@ export default new Vuex.Store({
           password: data.password,
           password2: data.password2,
           email: data.email,
+          uic:data.uic,
+          firstname:data.name,
+          lastname:'lastname',
           is_dentist: false,
           is_clinic: true,
           is_patient: false

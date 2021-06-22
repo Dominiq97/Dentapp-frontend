@@ -1,295 +1,356 @@
 <template>
-        <div class="main-wrapper">
-        <layout-header></layout-header>
-        <!-- <sidebar-admin></sidebar-admin> -->
-        <!-- Page Wrapper -->
+<div class="main-wrapper">
+<layout-header></layout-header>
+<div class="page-wrapper">
+    <div class="content container-fluid">
+      <div class="page-header">
+          <div class="row">
+              <div class="col-sm-12">
+                  <h3 class="page-title">Welcome {{currentAdmin.name}}</h3>
+              </div>
+          </div>
+      </div>
 
-        <div class="page-wrapper">
-            <div class="content container-fluid">
-
-                <!-- Page Header -->
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h3 class="page-title">Welcome Admin!</h3>
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item active">Dashboard</li>
-                            </ul>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dash-widget-header">
+                            <span class="dash-widget-icon text-primary border-primary">
+                                <i class="fas fa-user-md"></i>
+                            </span>
+                            <div class="dash-count">
+                                <h3>{{numberDentists}}</h3>
+                            </div>
+                        </div>
+                        <div class="dash-widget-info">
+                            <h6 class="text-muted">Dentists</h6>
                         </div>
                     </div>
                 </div>
-                <!-- /Page Header -->
-
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon text-primary border-primary">
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <h3>168</h3>
-                                    </div>
-                                </div>
-                                <div class="dash-widget-info">
-                                    <h6 class="text-muted">Doctors</h6>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-primary w-50"></div>
-                                    </div>
-                                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dash-widget-header">
+                            <span class="dash-widget-icon text-success">
+                                <i class="fas fa-user-injured"></i>
+                            </span>
+                            <div class="dash-count">
+                                <h3>{{numberPatients}}</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon text-success">
-                                        <i class="fa fa-credit-card"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <h3>487</h3>
-                                    </div>
-                                </div>
-                                <div class="dash-widget-info">
+                        <div class="dash-widget-info">
 
-                                    <h6 class="text-muted">Patients</h6>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-success w-50"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon text-danger border-danger">
-                                        <i class="fa fa-money"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <h3>485</h3>
-                                    </div>
-                                </div>
-                                <div class="dash-widget-info">
-
-                                    <h6 class="text-muted">Appointment</h6>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-danger w-50"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon text-warning border-warning">
-                                        <i class="fa fa-folder"></i>
-                                    </span>
-                                    <div class="dash-count">
-                                        <h3>$62523</h3>
-                                    </div>
-                                </div>
-                                <div class="dash-widget-info">
-
-                                    <h6 class="text-muted">Revenue</h6>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-warning w-50"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h6 class="text-muted">Patients</h6>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 col-lg-6">
-
-                        <!-- Sales Chart -->
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h4 class="card-title">Revenue</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="morrisArea"></div>
-                            </div>
-                        </div>
-                        <!-- /Sales Chart -->
-
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-
-                        <!-- Invoice Chart -->
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h4 class="card-title">Status</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="morrisLine"></div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dash-widget-header">
+                            <span class="dash-widget-icon text-danger border-danger">
+                                <i class="fas fa-calendar-check"></i>
+                            </span>
+                            <div class="dash-count">
+                                <h3>{{numberAppointments}}</h3>
                             </div>
                         </div>
-                        <!-- /Invoice Chart -->
+                        <div class="dash-widget-info">
 
+                            <h6 class="text-muted">Appointments</h6>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex">
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dash-widget-header">
+                            <span class="dash-widget-icon text-warning border-warning">
 
-                        <!-- Recent Orders -->
-                        <div class="card card-table flex-fill">
-                            <div class="card-header">
-                                <h4 class="card-title">Doctors List</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Doctor Name</th>
-                                                <th>Speciality</th>
-                                                <th>Earned</th>
-                                                <th>Reviews</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="item in doctorlist" :key="item.id">
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image, 1)" alt="User Image"></router-link>
-                                                        <router-link to="/admin/profile">{{item.name}}</router-link>
-                                                    </h2>
-                                                </td>
-                                                <td>{{item.speciality}}</td>
-                                                <td>{{item.earned}}</td>
-                                                <td>
-                                                    <i class="fa fa-star text-warning"></i>
-                                                    <i class="fa fa-star text-warning"></i>
-                                                    <i class="fa fa-star text-warning"></i>
-                                                    <i class="fa fa-star text-warning"></i>
-                                                    <i class="fa fa-star-o text-secondary"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <i class="fa fa-money"></i>
+                            </span>
+                            <div class="dash-count">
+                                <h3>$1</h3>
                             </div>
                         </div>
-                        <!-- /Recent Orders -->
+                        <div class="dash-widget-info">
 
-                    </div>
-                    <div class="col-md-6 d-flex">
-
-                        <!-- Feed Activity -->
-                        <div class="card  card-table flex-fill">
-                            <div class="card-header">
-                                <h4 class="card-title">Patients List</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Patient Name</th>
-                                                <th>Phone</th>
-                                                <th>Last Visit</th>
-                                                <th>Paid</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="item in patientlist" :key="item.id">
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image, 2)" alt="User Image"></router-link>
-                                                        <router-link to="/admin/profile">{{item.name}} </router-link>
-                                                    </h2>
-                                                </td>
-                                                <td>{{item.phone}}</td>
-                                                <td>{{item.lastvisit}}</td>
-                                                <td class="text-right">{{item.paid}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <h6 class="text-muted">Revenue</h6>
                         </div>
-                        <!-- /Feed Activity -->
-
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
 
-                        <!-- Recent Orders -->
-                        <div class="card card-table">
-                            <div class="card-header">
-                                <h4 class="card-title">Appointment List</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Doctor Name</th>
-                                                <th>Speciality</th>
-                                                <th>Patient Name</th>
-                                                <th>Apointment Time</th>
-                                                <th>Status</th>
-                                                <th class="text-right">Amount</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="item in appointmentlist" :key="item.id">
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image,1)" alt="User Image"></router-link>
-                                                        <router-link to="/admin/profile">{{item.name}}</router-link>
-                                                    </h2>
-                                                </td>
-                                                <td>{{item.speciality}}</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image1, 2)" alt="User Image"></router-link>
-                                                        <router-link to="/admin/profile">{{item.patientname}} </router-link>
-                                                    </h2>
-                                                </td>
-                                                <td>{{item.date}} <span class="text-primary d-block">{{item.time}}</span></td>
-                                                <td>
-                                                    <div class="status-toggle">
-                                                        <input type="checkbox" id="status_1" class="check" checked>
-                                                        <label for="status_1" class="checktoggle">checkbox</label>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    {{item.amount}}
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Recent Orders -->
-
+                <!-- Sales Chart -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4 class="card-title">Revenue</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="morrisArea"></div>
                     </div>
                 </div>
+                <!-- /Sales Chart -->
 
             </div>
+            <div class="col-md-12 col-lg-6">
+
+                <!-- Invoice Chart -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4 class="card-title">Status</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="morrisLine"></div>
+                    </div>
+                </div>
+                <!-- /Invoice Chart -->
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex">
+
+                <!-- Recent Orders -->
+                <div class="card card-table flex-fill">
+                    <div class="card-header">
+                        <h4 class="card-title">Doctors List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor Name</th>
+                                        <th>Speciality</th>
+                                        <th>Earned</th>
+                                        <th>Reviews</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in doctorlist" :key="item.id">
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image, 1)" alt="User Image"></router-link>
+                                                <router-link to="/admin/profile">{{item.name}}</router-link>
+                                            </h2>
+                                        </td>
+                                        <td>{{item.speciality}}</td>
+                                        <td>{{item.earned}}</td>
+                                        <td>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star-o text-secondary"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Recent Orders -->
+
+            </div>
+            <div class="col-md-6 d-flex">
+
+                <!-- Feed Activity -->
+                <div class="card  card-table flex-fill">
+                    <div class="card-header">
+                        <h4 class="card-title">Patients List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Patient Name</th>
+                                        <th>Phone</th>
+                                        <th>Last Visit</th>
+                                        <th>Paid</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in patientlist" :key="item.id">
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image, 2)" alt="User Image"></router-link>
+                                                <router-link to="/admin/profile">{{item.name}} </router-link>
+                                            </h2>
+                                        </td>
+                                        <td>{{item.phone}}</td>
+                                        <td>{{item.lastvisit}}</td>
+                                        <td class="text-right">{{item.paid}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Feed Activity -->
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Recent Orders -->
+                <div class="card card-table">
+                    <div class="card-header">
+                        <h4 class="card-title">Appointment List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor Name</th>
+                                        <th>Speciality</th>
+                                        <th>Patient Name</th>
+                                        <th>Apointment Time</th>
+                                        <th>Status</th>
+                                        <th class="text-right">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in appointmentlist" :key="item.id">
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image,1)" alt="User Image"></router-link>
+                                                <router-link to="/admin/profile">{{item.name}}</router-link>
+                                            </h2>
+                                        </td>
+                                        <td>{{item.speciality}}</td>
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <router-link to="/admin/profile" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" :src="loadImg(item.image1, 2)" alt="User Image"></router-link>
+                                                <router-link to="/admin/profile">{{item.patientname}} </router-link>
+                                            </h2>
+                                        </td>
+                                        <td>{{item.date}} <span class="text-primary d-block">{{item.time}}</span></td>
+                                        <td>
+                                            <div class="status-toggle">
+                                                <input type="checkbox" id="status_1" class="check" checked>
+                                                <label for="status_1" class="checktoggle">checkbox</label>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">
+                                            {{item.amount}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Recent Orders -->
+
+            </div>
+        </div>
+
+    </div>
     </div>
         <!-- /Page Wrapper -->
-    </div>
+</div>
 </template>
 <script>
+import DentistDataService from '../../services/DentistDataService'
     export default {
-        data() {
+    data() {
 		return {
-			doctorlist: doctorlist,
-            patientlist: patientlist,
-            appointmentlist: appointmentlist
+			// doctorlist: doctorlist,
+      // patientlist: patientlist,
+      // appointmentlist: appointmentlist,
+      currentAdmin:'',
+      dentists:[],
+      numberDentists:null,
+      patients:[],
+      numberPatients:null,
+      appointments:[],
+      numberAppointments:null,
 		}
 	},
+  created(){
+    this.get_clinic(localStorage.getItem('loggedId'))
+    this.get_dentists_of_clinic(this.$route.params.id)
+  //  this.count = this.countToday(this.$route.params.id)
+  },
+	 methods: {
+    get_clinic(id) {
+      DentistDataService.get_clinic(id)
+        .then(response => {
+          this.currentAdmin = response.data;
+          this.id = this.currentAdmin.pk;
+          this.numberDentists = this.get_dentists_of_clinic(this.$route.params.id)
+          this.numberPatients = this.get_patients_of_clinic(this.$route.params.id)
+          this.numberAppointments = this.get_appointments_of_clinic(this.$route.params.id)
+          // this.countTotal = this.countPatients(this.$route.params.id)
+          // this.countPend = this.countPending(this.$route.params.id)
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    get_dentists_of_clinic(id){
+      DentistDataService.get_dentists_of_clinic(id)
+        .then(response => {
+          this.numberDentists = response.data.length
+          this.dentists = response.data
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    get_appointments_of_clinic(id){
+      DentistDataService.get_appointments_of_clinic(id)
+        .then(response => {
+          this.numberAppointments = response.data.length
+          this.dentists = response.data
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    get_patients_of_clinic(id){
+      DentistDataService.get_patients_of_clinic(id)
+        .then(response => {
+          this.numberPatients = response.data.length
+          this.dentists = response.data
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   },
     mounted() {
         $(function(){
 
@@ -370,15 +431,7 @@
 		}
 	});
 },
-methods:{
-        loadImg(imgPath, value) {
-            if(value == 1) {
-              return  images('./' + imgPath)
-            } else {
-              return  patientImages('./' + imgPath)
-            }
-        },
-    }
+
     }
 </script>
 <style>

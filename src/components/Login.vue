@@ -74,10 +74,11 @@ export default {
         password: '',
         incorrectAuth: false,
         dent:null,
+        clin:null
       }
     },
   created(){
-    this.getDentist(localStorage.getItem('loggedId'))
+
   },
 	methods: {
 		login () {
@@ -86,14 +87,17 @@ export default {
           password: this.password,
         })
         .then(() => {
+
+
             if (localStorage.getItem('userType')=='patient'){
               this.$router.push({ name: 'index' })}
 
             else if (localStorage.getItem('userType')=='dentist'){
-              this.$router.push({ name: 'dentistIndex', params:{id:this.dent} })
+              this.getDentist(localStorage.getItem('loggedId'))
             }else if (localStorage.getItem('userType')=='admin'){
-              this.$router.push({ name: 'adminIndex' })
+              this.get_clinic(localStorage.getItem('loggedId'))
             }
+
 
         })
         .catch(err => {
@@ -101,15 +105,27 @@ export default {
           this.incorrectAuth = true
         })
         },
-        getDentist(id) {
-          DentistDataService.getDentist(id)
-        .then(response => {
-          this.dent = response.data.pk
-        })
-        .catch(e => {
-
-        });
-    }
+          getDentist(id) {
+            DentistDataService.getDentist(id)
+          .then(response => {
+            this.dent = response.data.pk
+            this.$router.push({ name: 'dentistIndex', params:{id:this.dent} })
+          })
+          .catch(e => {
+            console.log('dentist is not defined')
+          });
+        },
+       get_clinic(id) {
+            DentistDataService.get_clinic(id)
+          .then(response => {
+            this.clin = response.data.pk
+            console.log(this.clin)
+            this.$router.push({ name: 'adminIndex', params:{id:this.clin} })
+          })
+          .catch(e => {
+            console.log('dentist is not defined')
+          });
+        },
 	},
 }
 </script>

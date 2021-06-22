@@ -153,10 +153,6 @@
                       </div>
                     </div>
                   </div>
-                  <!-- /Upcoming Appointment Tab -->
-
-
-
                 </div>
               </div>
             </div>
@@ -165,7 +161,6 @@
       </div>
     </div>
   </div>
-  <!-- /Page Content -->
 <layout-footer></layout-footer>
 </div>
 </template>

@@ -119,7 +119,7 @@ export default {
           this.$router.push({ name: 'login' })
         })
         .catch(err => {
-          console.log(err)
+          alert('Something went wrong. Maybe the credentials are already taken or in wrong format.');
         })
       }
   }

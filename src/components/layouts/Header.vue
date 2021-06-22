@@ -30,7 +30,7 @@
                            <router-link :to="{ name: 'schedule', params: {id: currentDentist.pk } }">Schedule </router-link>
                        </li>
                        <li class="has-submenu" >
-                           <router-link to="/dentist/index">Appointments </router-link>
+                           <router-link :to="{ name: 'dentistIndex', params: {id: currentDentist.pk } }">Appointments </router-link>
                        </li>
                        <li class="has-submenu" >
                            <router-link to="/index">Messages </router-link>
@@ -41,7 +41,7 @@
                    </ul>
                     <ul v-else-if="getType=='admin'" class="main-nav">
                        <li class="has-submenu" >
-                           <router-link to="/index">Dashboard </router-link>
+                           <router-link to="/admin/index">Dashboard </router-link>
                        </li>
                        <li class="has-submenu" >
                            <router-link to="/index">Clinic profile </router-link>
@@ -105,7 +105,6 @@ export default {
           this.id = this.currentDentist.pk;
         })
         .catch(e => {
-          console.log(e);
         });
     },
     logout(){

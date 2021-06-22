@@ -22,8 +22,8 @@ import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import Register from '@/components/Register'
 import DentistRegister from '@/components/dentist/Register'
-import AdminRegister from '@/components/admin/register'
-import AdminIndex from '@/components/admin/index'
+import AdminRegister from '@/components/admin/Register'
+import AdminIndex from '@/components/admin/Index'
 import DentistIndex from '@/components/dentist/Index'
 import Schedule from '@/components/dentist/Schedule'
 import store from '../store'
@@ -65,7 +65,7 @@ const router = new Router({
         component: AdminRegister,
       },
       {
-        path: '/admin/index',
+        path: '/admin/:id/index',
         name: 'adminIndex',
         component: AdminIndex,
       },

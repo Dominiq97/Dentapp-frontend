@@ -13,7 +13,7 @@ import HomeBanner from '@/components/HomeBanner'
 import NewsLetter from '@/components/NewsLetter'
 import Loader from '@/components/Loader'
 import SearchBar from '@/components/dentist/SearchBar'
-import AdminIndex from '@/components/admin/index'
+import AdminIndex from '@/components/admin/Index'
 import Datepicker from 'vuejs-datepicker';
 import SearchFilter from '@/components/patient/SearchFilter'
 import VueTimepicker from 'vue2-timepicker'
