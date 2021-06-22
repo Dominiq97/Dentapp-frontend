@@ -31,6 +31,7 @@ import DentistRegister from '@/components/dentist/Register'
 import AdminRegister from '@/components/admin/register'
 import AdminIndex from '@/components/admin/index'
 import DentistIndex from '@/components/dentist/Index'
+import Schedule from '@/components/dentist/Schedule'
 import store from '../store'
 
 
@@ -94,6 +95,12 @@ const router = new Router({
         name: 'booking_success',
         component: BookingSuccess,
       },
+      {
+        path: '/dentist/:id/schedule',
+        name: 'schedule',
+        component: Schedule,
+      },
+
 
   ],
   linkActiveClass: "active",

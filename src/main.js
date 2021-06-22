@@ -8,7 +8,6 @@ import LayoutHeader from '@/components/layouts/Header'
 import TopHeader from '@/components/layouts/TopHeader'
 import HeaderAdmin from '@/components/layouts/HeaderAdmin'
 import SidebarAdmin from '@/components/layouts/SidebarAdmin'
-import LayoutHeader2 from '@/components/layouts/Header2'
 import LayoutHeader3 from '@/components/layouts/patient/Header'
 import LayoutFooter from '@/components/layouts/Footer'
 import Sidebar1 from '@/components/layouts/patient/SideBar'
@@ -22,6 +21,7 @@ import SearchFilter from '@/components/patient/SearchFilter'
 import VueTimepicker from 'vue2-timepicker'
 import 'vue2-timepicker/dist/VueTimepicker.css'
 import moment from 'moment'
+import {Schedule} from './schedule'
 /** Breadcrumbs **/
 
 let Bootstrap = require('bootstrap')
@@ -47,7 +47,6 @@ Vue.component('layout-header', LayoutHeader);
 Vue.component('top-header', TopHeader);
 Vue.component('header-admin', HeaderAdmin);
 Vue.component('sidebar-admin', SidebarAdmin);
-Vue.component('layout-header2', LayoutHeader2);
 Vue.component('layout-header3', LayoutHeader3);
 Vue.component('sidebar1', Sidebar1);
 Vue.component('layout-footer', LayoutFooter);
@@ -57,18 +56,14 @@ Vue.component('slick', Slick);
 Vue.component('search-filter', SearchFilter);
 Vue.component('search-bar', SearchBar);
 Vue.component('loader', Loader);
-Vue.component('datepicker', Datepicker)
-Vue.component('vue-timepicker',VueTimepicker)
-
-
-/* BreadCrumbs */
-
+Vue.component('datepicker', Datepicker);
+Vue.component('vue-timepicker',VueTimepicker);
+Vue.use(Schedule.default);
 Vue.filter('formatDate', function(value) {
   if (value) {
     return moment(String(value)).format('MM/DD/YYYY hh:mm')
   }
 });
-
 
 new Vue({
   el: '#app',

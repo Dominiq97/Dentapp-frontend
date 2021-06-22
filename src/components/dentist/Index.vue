@@ -18,7 +18,12 @@
               <div class="widget-profile pro-widget-content">
             <div class="profile-info-widget">
                 <a href="#" class="booking-doc-img">
+                  <div v-if="currentDentist">
                     <img :src="require('@/assets/img/dentists/avatars/'+currentDentist.avatar.split('/').slice(-1)[0])" alt="User Image">
+                  </div>
+                  <div v-else>
+                    <img alt="User Image">
+                  </div>
                 </a>
                 <div class="profile-det-info">
                     <h3>Dr. {{currentDentist.firstname}} {{currentDentist.lastname}}</h3>
@@ -170,12 +175,7 @@
 
 <script>
 import DentistDataService from "../../services/DentistDataService";
-
-
-
 export default {
-
-
 	data() {
 		return {
       currentDentist:'',
@@ -184,12 +184,12 @@ export default {
       apps:[],
       all:null,
       state:null
-
 		}
 	},
   created(){
     this.getDentist(localStorage.getItem('loggedId'))
-
+    console.log(this.id)
+    console.log(this.currentDentist)
   },
 	 methods: {
     getDentist(id) {
@@ -198,7 +198,6 @@ export default {
           this.currentDentist = response.data;
           this.id = this.currentDentist.pk;
           this.retrieveApps(this.id)
-          localStorage.setItem('currentDentist',this.currentDentist)
         })
         .catch(e => {
           console.log(e);

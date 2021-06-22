@@ -33,6 +33,30 @@ class DentistDataService {
     return http.post(`/api/appointment/decline/${id}`);
   }
 
+  get_this_week_mon(id){
+    return http.get(`/api/appointment/this_week_mon/${id}`);
+  }
+
+  get_this_week_tue(id){
+    return http.get(`/api/appointment/this_week_tue/${id}`);
+  }
+
+  get_this_week_wed(id){
+    return http.get(`/api/appointment/this_week_wed/${id}`);
+  }
+
+  get_this_week_thu(id){
+    return http.get(`/api/appointment/this_week_thu/${id}`);
+  }
+
+  get_this_week_fri(id){
+    return http.get(`/api/appointment/this_week_fri/${id}`);
+  }
+
+  get_that_week(id){
+    return http.get(`/api/appointment/that_week/${id}`);
+  }
+
   // update(id, data) {
   //   return http.put(`/tutorials/${id}`, data);
   // }

@@ -138,7 +138,7 @@
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
-                                                                                        <p class="ml-4 mt-4"><span class="available">PATIENT:   </span> <input type="text" value="Any" class="any-intake-box"></p>
+                                                       <p class="ml-4 mt-4"><span class="available">PATIENT:   </span> <input type="text" value="Any" class="any-intake-box"></p>
 														<table class="table table-hover table-center mb-0">
 															<thead>
 																<tr class="patient-appoint">

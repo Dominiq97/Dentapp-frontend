@@ -73,8 +73,8 @@ export default new Vuex.Store({
             localStorage.setItem('username', usercredentials.username)
             localStorage.setItem('password', usercredentials.password)
             localStorage.setItem('loggedId', response.data.pk)
-            localStorage.setItem('loggedPat', DentistDataService.getPatient(localStorage.getItem('loggedId')))
-
+            // localStorage.setItem('loggedPat', DentistDataService.getPatient(localStorage.getItem('loggedId')))
+            // localStorage.setItem('loggedDen', DentistDataService.getDentist(localStorage.getItem('loggedId')))
 
             if (response.data.is_dentist){
               localStorage.setItem('userType', 'dentist')
