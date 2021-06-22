@@ -6,9 +6,7 @@ import { BarChart } from 'vue-morris'
 import { LineChart } from 'vue-morris'
 import LayoutHeader from '@/components/layouts/Header'
 import TopHeader from '@/components/layouts/TopHeader'
-import HeaderAdmin from '@/components/layouts/HeaderAdmin'
 import SidebarAdmin from '@/components/layouts/SidebarAdmin'
-import LayoutHeader3 from '@/components/layouts/patient/Header'
 import LayoutFooter from '@/components/layouts/Footer'
 import Sidebar1 from '@/components/layouts/patient/SideBar'
 import HomeBanner from '@/components/HomeBanner'
@@ -28,7 +26,6 @@ let Bootstrap = require('bootstrap')
 import 'bootstrap/dist/css/bootstrap.css'
 
  if(window.location.pathname.includes("admin")) {
-  require('./assets/css/adminstyle.css');
 }else {
   require('./assets/css/style.css');
 }
@@ -45,9 +42,7 @@ Vue.config.productionTip = false
 /*Global Components */
 Vue.component('layout-header', LayoutHeader);
 Vue.component('top-header', TopHeader);
-Vue.component('header-admin', HeaderAdmin);
 Vue.component('sidebar-admin', SidebarAdmin);
-Vue.component('layout-header3', LayoutHeader3);
 Vue.component('sidebar1', Sidebar1);
 Vue.component('layout-footer', LayoutFooter);
 Vue.component('home-banner', HomeBanner);
@@ -62,6 +57,12 @@ Vue.use(Schedule.default);
 Vue.filter('formatDate', function(value) {
   if (value) {
     return moment(String(value)).format('MM/DD/YYYY hh:mm')
+  }
+});
+
+Vue.filter('formatDateBeauty', function(value) {
+  if (value) {
+    return moment(String(value)).format('DD, MMM yyyy')
   }
 });
 

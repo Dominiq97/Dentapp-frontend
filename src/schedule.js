@@ -655,7 +655,6 @@ module.exports = function normalizeComponent (
 	},
 	watch: {
 		show: function show(value) {
-			console.log('value=', value);
 			this.modalShow = true;
 		}
 	},

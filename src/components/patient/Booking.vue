@@ -12,7 +12,6 @@
 								<div class="card-body">
 									<div class="booking-doc-info">
 										<router-link to="/doctor/profile" class="booking-doc-img">
-											<img src="@/assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 										</router-link>
 										<div class="booking-info">
 											<h4><router-link to="/doctor/profile">Dr. {{currentDentist.firstname}} {{currentDentist.lastname}}</router-link></h4>

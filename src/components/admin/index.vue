@@ -282,11 +282,6 @@
     </div>
 </template>
 <script>
-    import doctorlist from '../../assets/json/admin/AdminIndex/doctorlist.json'
-    import patientlist from '../../assets/json/admin/AdminIndex/patientlist.json'
-    import appointmentlist from '../../assets/json/admin/AdminIndex/appointmentlist.json'
-    const images = require.context('@/assets/admin_img/doctors', false, /\.png$|\.jpg$/)
-    const patientImages = require.context('@/assets/admin_img/patients', false, /\.png$|\.jpg$/)
     export default {
         data() {
 		return {

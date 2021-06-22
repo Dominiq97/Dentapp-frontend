@@ -1,5 +1,5 @@
 import ScheduleComponent from './Schedule'
-
+import Vue from 'vue'
 
 
 const Schedule = {

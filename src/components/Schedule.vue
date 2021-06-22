@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import Modal from '../layouts/dentist/Modal.vue';
+import Modal from './Modal';
 export default {
 	name: 'Schedule',
 	props: {

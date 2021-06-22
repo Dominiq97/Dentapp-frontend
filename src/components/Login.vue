@@ -65,17 +65,19 @@
 </template>
 
 <script>
+import DentistDataService from '../services/DentistDataService'
 export default {
   name: 'login',
   data () {
       return {
         username: '',
         password: '',
-        incorrectAuth: false
+        incorrectAuth: false,
+        dent:null,
       }
     },
-  computed:{
-
+  created(){
+    this.getDentist(localStorage.getItem('loggedId'))
   },
 	methods: {
 		login () {
@@ -86,8 +88,9 @@ export default {
         .then(() => {
             if (localStorage.getItem('userType')=='patient'){
               this.$router.push({ name: 'index' })}
+
             else if (localStorage.getItem('userType')=='dentist'){
-              this.$router.push({ name: 'dentistIndex' })
+              this.$router.push({ name: 'dentistIndex', params:{id:this.dent} })
             }else if (localStorage.getItem('userType')=='admin'){
               this.$router.push({ name: 'adminIndex' })
             }
@@ -97,7 +100,16 @@ export default {
           console.log(err)
           this.incorrectAuth = true
         })
-        }
+        },
+        getDentist(id) {
+          DentistDataService.getDentist(id)
+        .then(response => {
+          this.dent = response.data.pk
+        })
+        .catch(e => {
+
+        });
+    }
 	},
 }
 </script>

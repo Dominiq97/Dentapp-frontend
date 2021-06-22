@@ -57,6 +57,19 @@ class DentistDataService {
     return http.get(`/api/appointment/that_week/${id}`);
   }
 
+  get_today(id){
+    return http.get(`/api/appointments/today/${id}`);
+  }
+
+  get_patients_dentist(id){
+    return http.get(`/api/appointments/get_patients_dentist/${id}`)
+  }
+
+  get_patients_pending(id){
+    return http.get(`api/appointments/pending/${id}`)
+  }
+
+
   // update(id, data) {
   //   return http.put(`/tutorials/${id}`, data);
   // }

@@ -121,75 +121,7 @@ export default {
       let resp = []
       DentistDataService.get_this_week_mon(id)
         .then(response => {
-          let day = []
-          for (let i=0;i<response.data.length;i++){
-            var app = {}
-            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
-            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
-            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
-            let demi = 0;
-            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
-              demi = 50
-            }
-            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
-            app['detail'] = response.data[i].status
-            app['styleObj'] = { height: "100px", top: String(50*clo+demi)+"px" }
-            day.push(app)
-          }
-          resp.push(day)
-        })
-        .catch(e => {
-          console.log(e);
-        });
-
-      DentistDataService.get_this_week_tue(id)
-        .then(response => {
-          let day = []
-          for (let i=0;i<response.data.length;i++){
-            var app = {}
-            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
-            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
-            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
-            let demi = 0;
-            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
-              demi = 50
-            }
-            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
-            app['detail'] = response.data[i].status
-            app['styleObj'] = { height: "100px", top: String(50*clo+demi)+"px" }
-            day.push(app)
-          }
-          resp.push(day)
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        DentistDataService.get_this_week_wed(id)
-        .then(response => {
-          let day = []
-          for (let i=0;i<response.data.length;i++){
-            var app = {}
-            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
-            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
-            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
-            let demi = 0;
-            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
-              demi = 50
-            }
-            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
-            app['detail'] = response.data[i].status
-            app['styleObj'] = { height: "100px", top: String(50*clo+demi)+"px" }
-            
-            day.push(app)
-          }
-          resp.push(day)
-        })
-        .catch(e => {
-          console.log(e);
-        });
-        DentistDataService.get_this_week_thu(id)
-        .then(response => {
-          let day = []
+         let day = []
           for (let i=0;i<response.data.length;i++){
             var app = {}
             app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
@@ -202,14 +134,85 @@ export default {
             }
             app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
             app['detail'] = response.data[i].status
-            app['styleObj'] = { height: "100px", top: String(50*(clo)+demi)+"px" }
-            
+            app['styleObj'] = { height: "100px", top: String(100*(clo-8)+50+demi)+"px" }
+
             day.push(app)
           }
           resp.push(day)
         })
         .catch(e => {
           console.log(e);
+        });
+
+      DentistDataService.get_this_week_tue(id)
+        .then(response => {
+         let day = []
+          for (let i=0;i<response.data.length;i++){
+            var app = {}
+            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
+            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
+            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
+            console.log(clo)
+            let demi = 0;
+            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
+              demi = 50
+            }
+            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
+            app['detail'] = response.data[i].status
+            app['styleObj'] = { height: "100px", top: String(100*(clo-8)+50+demi)+"px" }
+
+            day.push(app)
+          }
+          resp.push(day)
+        })
+        .catch(e => {
+          console.log(e);
+        });
+        DentistDataService.get_this_week_wed(id)
+        .then(response => {
+         let day = []
+          for (let i=0;i<response.data.length;i++){
+            var app = {}
+            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
+            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
+            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
+            console.log(clo)
+            let demi = 0;
+            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
+              demi = 50
+            }
+            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
+            app['detail'] = response.data[i].status
+
+            app['styleObj'] = { height: "100px", top: String(100*(clo-8)+50+demi)+"px" }
+
+            day.push(app)
+          }
+          resp.push(day)
+        })
+        .catch(e => {
+          console.log(e);
+        });
+        DentistDataService.get_this_week_thu(id)
+        .then(response => {
+         let day = []
+          for (let i=0;i<response.data.length;i++){
+            var app = {}
+            app['dateStart']=response.data[i].date_time.split('T')[1].slice(0,-4)
+            app['dateEnd'] = String(parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[0])+1)+":"+String(response.data[i].date_time.split('T')[1].slice(0,-4).split(":")[1])
+            let clo = parseInt(response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[0])
+            console.log(clo)
+            let demi = 0;
+            if (response.data[i].date_time.split('T')[1].slice(0,-4).split(':')[1]=='30'){
+              demi = 50
+            }
+            app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
+            app['detail'] = response.data[i].status
+            app['styleObj'] = { height: "100px", top: String(100*(clo-8)+50+demi)+"px" }
+
+            day.push(app)
+          }
+          resp.push(day)
         });
       DentistDataService.get_this_week_fri(id)
         .then(response => {
@@ -226,8 +229,8 @@ export default {
             }
             app['title'] = response.data[i].patient.user.firstname + ' ' + response.data[i].patient.user.lastname
             app['detail'] = response.data[i].status
-            app['styleObj'] = { height: "100px", top: String(50*(clo)+demi)+"px" }
-            
+            app['styleObj'] = { height: "100px", top: String(100*(clo-8)+50+demi)+"px" }
+
             day.push(app)
           }
           resp.push(day)

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 /** For Home Pages **/
-import Index from '@/components/Index'
+import Index from '@/components/Index.vue'
 
 
 /** For Doctor **/
@@ -10,15 +10,9 @@ import DoctorDashboard from '@/components/dentist/Index'
 
 
 /** For Patient **/
-import PatientDashboard from '@/components/patient/Index'
 import addBooking from '@/components/patient/Booking'
 import BookingSuccess from '@/components/patient/BookingSuccess'
 import SearchDentist from '@/components/patient/SearchDentist'
-import Checkout from '@/components/patient/Checkout'
-import Favourites from '@/components/patient/Favourites'
-import Chat from '@/components/patient/Chat'
-import PatientProfileSettings from '@/components/patient/Profile'
-import AppointmentDetail from '@/components/patient/AppointmentDetail'
 
 
 
@@ -76,7 +70,7 @@ const router = new Router({
         component: AdminIndex,
       },
       {
-        path: '/dentist/index',
+        path: '/dentist/:id/index',
         name: 'dentistIndex',
         component: DentistIndex,
       },

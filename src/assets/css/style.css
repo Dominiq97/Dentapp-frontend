@@ -4,12 +4,8 @@
 	font-family: 'Material Icons';
 	font-style: normal;
 	font-weight: 400;
-	src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
 	src: local('Material Icons'),
 	local('MaterialIcons-Regular'),
-	url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
-	url(../fonts/MaterialIcons-Regular.woff) format('woff'),
-	url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 .material-icons {
 	font-family: 'Material Icons';
@@ -2389,9 +2385,7 @@ html.menu-opened body {
     position: relative;
     width: 240px;
 }
-.search-location .form-control {
-	background: #fff url(../img/location.png) no-repeat 10px center;
-}
+
 .search-box .search-info {
     -ms-flex: 0 0 490px;
     flex: 0 0 490px;
@@ -2399,9 +2393,7 @@ html.menu-opened body {
     position: relative;
     width: 490px;
 }
-.search-info .form-control {
-	background: #fff url(../img/search.png) no-repeat 10px center;
-}
+
 .search-box .search-btn {
     width: 46px;
     -ms-flex: 0 0 46px;
@@ -3140,7 +3132,7 @@ html.menu-opened body {
 	background-color: #f3c41b;
 }
 .count-section {
-	background: #f9f9f9 url(../img/count-bg.jpg) no-repeat bottom center;
+	background: #f9f9f9 no-repeat bottom center;
 	padding: 60px 20px;
     background-size: cover;
     background-position: center;
@@ -3185,7 +3177,7 @@ html.menu-opened body {
     border-radius: 30px 7px;
 }
 .appoinment-section {
-	background: #f9f9f9 url(../img/appoinment-bg.jpg) no-repeat bottom center;
+	background: #f9f9f9 no-repeat bottom center;
 	padding: 60px 20px;
     background-size: cover;
     background-position: center;
