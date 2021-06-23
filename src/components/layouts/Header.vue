@@ -74,9 +74,6 @@
                     <router-link to="/patient/search_dentist">Search dentist </router-link>
                 </li>
                 <li class="has-submenu" >
-                    <router-link to="/index">My Appointments </router-link>
-                </li>
-                <li class="has-submenu" >
                     <router-link :to="{ name: 'profile', params: {id: this.$route.params.id } }">Profile </router-link>
                 </li>
                 <li class="login-link" v-if="isLoggedIn"  >

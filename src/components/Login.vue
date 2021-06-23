@@ -109,6 +109,7 @@ export default {
           .then(response => {
             this.dent = response.data.pk
             this.$router.push({ name: 'dentistIndex', params:{id:this.dent} })
+
           })
           .catch(e => {
             console.log('dentist is not defined')
@@ -131,6 +132,7 @@ export default {
             this.pat = response.data.pk
             console.log(this.pat)
             this.$router.push({ name: 'index', params:{id:this.pat} })
+            localStorage.setItem('patientId',this.pat)
           })
           .catch(e => {
             console.log('dentist is not defined')
