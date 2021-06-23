@@ -1,7 +1,7 @@
 <template>
     <div class="main-wrapper">
-        <layout-header></layout-header>
+        <header-layout></header-layout>
         <home-banner></home-banner>
-        <layout-footer></layout-footer>
+        <footer-layout></footer-layout>
     </div>
 </template>

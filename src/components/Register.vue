@@ -1,6 +1,6 @@
 <template>
     <div class="main-wrapper">
-        <layout-header></layout-header>
+        <header-layout></header-layout>
         <!-- Page Content -->
 			<div class="content bg-white">
 				<div class="container-fluid">
@@ -69,7 +69,7 @@
 			</div>
 			<!-- /Page Content -->
 
-        <layout-footer></layout-footer>
+        <footer-layout></footer-layout>
     </div>
 </template>
 

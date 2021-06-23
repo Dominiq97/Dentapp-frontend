@@ -1,6 +1,6 @@
 <template>
 <div class="main-wrapper">
-<layout-header></layout-header>
+<header-layout></header-layout>
 <div class="page-wrapper">
     <div class="content container-fluid">
       <div class="page-header">
@@ -110,10 +110,11 @@
                                                 <router-link to="/admin/profile">{{dent.firstname}} {{dent.lastname}}</router-link>
                                             </h2>
                                         </td>
-                                        <div v-for="(dc,ind) in dent.speciality" :key="'A'+ind" class="clinic-services">
-                                          <span>{{dc.name}}</span>
-                                        </div>
-
+                                        <td>
+                                          <div v-for="(item,ind) in dent.speciality" :key="'A'+ind" class="clinic-services">
+                                            <span>{{item.name}}</span>
+                                          </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

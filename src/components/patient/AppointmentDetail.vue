@@ -1,6 +1,6 @@
 <template>
     <div class="main-wrapper">
-        <layout-header3></layout-header3>
+        <header-layout3></header-layout3>
         <breadcrumb1></breadcrumb1>
         <!-- Page Content -->
 			<div class="content">
@@ -12,7 +12,7 @@
 							<div class="col-md-7 col-lg-8 col-xl-9">
 							<div class="card">
 								<div class="card-body pt-0">
-								
+
 									<!-- Tab Menu -->
 									<nav class="user-tabs mb-4">
 										<ul class="nav nav-tabs nav-tabs-bottom nav-justified">
@@ -28,16 +28,16 @@
 										</ul>
 									</nav>
 									<!-- /Tab Menu -->
-									
+
 									<!-- Tab Content -->
 									<div class="tab-content pt-0">
-										
+
 										<!-- Upcoming Tab -->
 										<div id="pat_appointments" class="tab-pane fade show active">
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
-                                                        <p class="ml-4 mt-4"><span class="available">PATIENT:   </span> 
+                                                        <p class="ml-4 mt-4"><span class="available">PATIENT:   </span>
                                 <input type="text" value="Any" class="any-intake-box"></p>
 														<table class="table table-hover table-center mb-0">
 															<thead>
@@ -50,7 +50,7 @@
 																</tr>
 															</thead>
 															<tbody>
-                                
+
 																<tr>
                                   <td>
 																		<h2 class="table-avatar">
@@ -76,7 +76,7 @@
                                     									<span class="d-block text-info">12:00AM - 12.30AM</span>
                                  									 </td>
 																	<td>
-																	<i class="fas fa-video appoint-video"></i>  
+																	<i class="fas fa-video appoint-video"></i>
 																		<p class="go-visit mb-0">GO TO VISIT</p>
 																	</td>
 																</tr>
@@ -105,11 +105,11 @@
                                     <span class="d-block text-info">12:00AM - 12.30AM</span>
                                   </td>
 																	<td>
-                                  <i class="fas fa-video appoint-video"></i>  
+                                  <i class="fas fa-video appoint-video"></i>
                                    <p class="go-visit mb-0">GO TO VISIT</p>
                                   </td>
 																</tr>
-																
+
 															</tbody>
 														</table>
 													</div>
@@ -117,22 +117,22 @@
 											</div>
 										</div>
 										<!-- /Upcoming Tab -->
-										
+
 										<!-- Requested Tab -->
 										<div class="tab-pane fade" id="pat_prescriptions">
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
-														<table class="table table-hover table-center mb-0">	
+														<table class="table table-hover table-center mb-0">
 														</table>
 													</div>
 												</div>
 											</div>
 										</div>
 										<!-- /Requested Tab -->
-											
-										
-										
+
+
+
 										<!-- History Tab -->
 										<div id="pat_billing" class="tab-pane fade">
 											<div class="card card-table mb-0">
@@ -197,7 +197,7 @@
                                     <span class="d-block text-info">12:00AM - 12.30AM</span>
                                   </td>
 																	<td>
-                                  <i class="fa fa-check"></i> 
+                                  <i class="fa fa-check"></i>
                                   </td>
 																</tr>
 																<tr>
@@ -245,10 +245,10 @@
                                     <span class="d-block text-info">12:00AM - 12.30AM</span>
                                   </td>
 																	<td>
-                                  <i class="fa fa-check"></i> 
+                                  <i class="fa fa-check"></i>
                                   </td>
 																</tr>
-																
+
 															</tbody>
 														</table>
 													</div>
@@ -256,18 +256,18 @@
 											</div>
 										</div>
 										<!-- /History Tab -->
-										
+
 									</div>
 									<!-- Tab Content -->
-									
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
         <!-- /Page Content -->
-		<layout-footer></layout-footer>
+		<footer-layout></footer-layout>
     </div>
 </template>
 

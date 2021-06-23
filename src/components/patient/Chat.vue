@@ -1,8 +1,8 @@
 <template>
 <div>
     <div class="main-wrapper">
-        <layout-header3></layout-header3>
-        	
+        <header-layout3></header-layout3>
+
 			<!-- Page Content -->
 			<div class="content">
 				<div class="container-fluid">
@@ -14,7 +14,7 @@
 						<!-- / Profile Sidebar -->
 						<div class="col-md-7 col-lg-8 col-xl-9">
 							<div class="chat-window">
-							
+
 								<!-- Chat Left -->
 								<div class="chat-cont-left">
 									<div class="chat-header">
@@ -199,7 +199,7 @@
 									</div>
 								</div>
 								<!-- /Chat Left -->
-							
+
 								<!-- Chat Right -->
 								<div class="chat-cont-right">
 									<div class="chat-header">
@@ -457,7 +457,7 @@
 									</div>
 								</div>
 								<!-- /Chat Right -->
-								
+
 							</div>
 						</div>
 					</div>
@@ -465,7 +465,7 @@
 
 				</div>
 
-			</div>		
+			</div>
 			<!-- /Page Content -->
     </div>
 	<!-- Voice Call Modal -->
@@ -481,7 +481,7 @@
 										<img alt="User Image" src="@/assets/img/doctors/doctor-thumb-02.jpg" class="call-avatar">
 										<h4>Gennaro Weiner</h4>
 										<span>Connecting...</span>
-									</div>						
+									</div>
 									<div class="call-items">
 										<a href="javascript:void(0);" class="btn call-item call-end" data-dismiss="modal" aria-label="Close"><i class="material-icons">call_end</i></a>
 										<a href="javascript:void(0);" class="btn call-item call-start"><i class="material-icons">call</i></a>
@@ -495,13 +495,13 @@
 			</div>
 		</div>
 		<!-- /Voice Call Modal -->
-		
+
 		<!-- Video Call Modal -->
 		<div class="modal fade call-modal" id="video_call">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-body">
-					
+
 						<!-- Incoming Call -->
 						<div class="call-box incoming-box">
 							<div class="call-wrapper">
@@ -510,7 +510,7 @@
 										<img class="call-avatar" src="@/assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 										<h4>Gennaro Weiner</h4>
 										<span>Calling ...</span>
-									</div>							
+									</div>
 									<div class="call-items">
 										<a href="javascript:void(0);" class="btn call-item call-end" data-dismiss="modal" aria-label="Close"><i class="material-icons">call_end</i></a>
 										<a href="javascript:void(0);" class="btn call-item call-start"><i class="material-icons">videocam</i></a>
@@ -519,7 +519,7 @@
 							</div>
 						</div>
 						<!-- /Incoming Call -->
-						
+
 					</div>
 				</div>
 			</div>

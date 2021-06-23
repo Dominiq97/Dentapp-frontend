@@ -5,12 +5,8 @@ import router from './router'
 import { BarChart } from 'vue-morris'
 import { LineChart } from 'vue-morris'
 import LayoutHeader from '@/components/layouts/Header'
-import TopHeader from '@/components/layouts/TopHeader'
-import SidebarAdmin from '@/components/layouts/SidebarAdmin'
 import LayoutFooter from '@/components/layouts/Footer'
-import Sidebar1 from '@/components/layouts/patient/SideBar'
 import HomeBanner from '@/components/HomeBanner'
-import NewsLetter from '@/components/NewsLetter'
 import Loader from '@/components/Loader'
 import AdminIndex from '@/components/admin/Index'
 import Datepicker from 'vuejs-datepicker';
@@ -36,13 +32,9 @@ global.Raphael = Raphael
 Vue.config.productionTip = false
 
 /*Global Components */
-Vue.component('layout-header', LayoutHeader);
-Vue.component('top-header', TopHeader);
-Vue.component('sidebar-admin', SidebarAdmin);
-Vue.component('sidebar1', Sidebar1);
-Vue.component('layout-footer', LayoutFooter);
+Vue.component('header-layout', LayoutHeader);
+Vue.component('footer-layout', LayoutFooter);
 Vue.component('home-banner', HomeBanner);
-Vue.component('news-letter', NewsLetter);
 Vue.component('slick', Slick);
 Vue.component('search-filter', SearchFilter);
 Vue.component('loader', Loader);
