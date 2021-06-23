@@ -12,7 +12,6 @@ import Sidebar1 from '@/components/layouts/patient/SideBar'
 import HomeBanner from '@/components/HomeBanner'
 import NewsLetter from '@/components/NewsLetter'
 import Loader from '@/components/Loader'
-import SearchBar from '@/components/dentist/SearchBar'
 import AdminIndex from '@/components/admin/Index'
 import Datepicker from 'vuejs-datepicker';
 import SearchFilter from '@/components/patient/SearchFilter'
@@ -46,7 +45,6 @@ Vue.component('home-banner', HomeBanner);
 Vue.component('news-letter', NewsLetter);
 Vue.component('slick', Slick);
 Vue.component('search-filter', SearchFilter);
-Vue.component('search-bar', SearchBar);
 Vue.component('loader', Loader);
 Vue.component('datepicker', Datepicker);
 Vue.component('vue-timepicker',VueTimepicker);

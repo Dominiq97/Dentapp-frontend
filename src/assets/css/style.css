@@ -2029,13 +2029,13 @@ html.menu-opened body {
 }
 
 .footer {
-    background-color: #091d3e;
+    background-color: #FFB7B7;
 }
 .footer .footer-top {
 	padding: 60px 0 40px;
 }
 .footer-title {
-    color: #fff;
+    color: #05264F;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -2051,7 +2051,7 @@ html.menu-opened body {
 	margin-bottom: 30px;
 }
 .footer .footer-widget .footer-about-content p {
-	color: #fff;
+	color: #05264F;
 }
 .footer .footer-widget .footer-about-content p:last-child {
 	margin-bottom: 0;
@@ -2064,14 +2064,14 @@ html.menu-opened body {
 	margin-bottom: 0;
 }
 .footer .footer-menu ul li a {
-	color: #fff;
+	color: #05264F;
 	font-size: 15px;
 	padding-left: 20px;
 	position: relative;
 	transition: all 0.4s ease 0s;
 }
 .footer .footer-widget.footer-menu ul li a:hover {
-	color: #fff;
+	color: #05264F;
 	letter-spacing: 0.5px;
 	padding-left: 30px;
 }
@@ -2085,7 +2085,7 @@ html.menu-opened body {
     top: 0;
 }
 .footer-contact-info {
-	color: #fff;
+	color: #05264F;
 	font-size: 15px;
 }
 .footer-contact-info .footer-address {
@@ -2112,21 +2112,21 @@ html.menu-opened body {
 }
 .footer .media-btn li a {
 	border-radius: 15px 5px;
-    background-color: #05264f;
+    background-color: #77FDFD;
     padding: 15px;
 }
 .footer .footer-bottom .copyright-text p {
-	color: #fff;
+	color: #05264F;
 	font-size: 15px;
 }
 .footer .footer-bottom .copyright-text p a {
-	color: #09e5ab;
+	color: #fff;
 	-webkit-transition: all 0.4s ease 0s;
 	-o-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
 }
 .footer .footer-bottom .copyright-text p a:hover {
-	color: #fff;
+	color: #05264F;
 }
 .footer .footer-bottom .copyright-text p.title {
 	font-weight: 400;
@@ -2155,7 +2155,7 @@ html.menu-opened body {
 	transition: all 0.4s ease 0s;
 }
 .footer .social-icon ul li a:hover {
-	color: #77FDFD;
+	color: #05264F;
 }
 .policy-menu {
     font-size: 14px;
@@ -2171,7 +2171,7 @@ html.menu-opened body {
 	margin-right: 0;
 }
 .policy-menu li a {
-    color: #fff;
+    color: #05264F;
 }
 .policy-menu li a:hover, .policy-menu li a:focus {
 	color: #77FDFD;
@@ -2186,8 +2186,8 @@ html.menu-opened body {
 .policy-menu li:last-child::after {
     content: "";
 }
-.footer-bottom .text-yellow {
-	color: #77FDFD !important;
+.footer-bottom  {
+	color:#05264F ;
 }
 /*-----------------
 	14. Login

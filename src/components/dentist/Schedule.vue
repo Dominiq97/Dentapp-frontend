@@ -39,7 +39,7 @@
 															<!-- /Schedule Header -->
                               <Schedule
                                 :time-ground="['08:00', '19:00']"
-                                :week-ground="['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']"
+                                :week-ground="['M', 'T', 'W', 'T', 'F']"
                                 :color="[
                                   '#2B2E4A',
                                   '#521262',
@@ -48,7 +48,7 @@
                                   '#40514E',
                                   '#537780',
                                 ]"
-                                :task-detail="this.curcur">
+                                :task-detail="this.apps">
 
                               </Schedule>
 														</div>
@@ -98,8 +98,7 @@ export default {
             detail: 'Not urgent'
           }
         ]],
-      cur:[],
-      curcur:[],
+      apps:[],
       currentDentist:null,
       that_week_list:[],
       this_week_list:[]
@@ -109,8 +108,7 @@ export default {
     this.getDentist()
     console.log(this.currentDentist)
     console.log(this.getThisWeeksApps(this.currentDentist))
-    this.curcur = this.getThisWeeksApps(this.currentDentist)
-    console.log(this.cur)
+    this.apps = this.getThisWeeksApps(this.currentDentist)
   },
 
   methods: {

@@ -20,7 +20,7 @@
 											<div class="doc-info-cont">
 												<h4 class="doc-name">Dr. {{dentist.firstname}} {{dentist.lastname}} </h4>
                         <div v-for="(clin, ind) in dentist.clinics" :key="'A'+ind">
-												  <p class="doc-department">{{clin.city}} - {{clin.name}} </p>
+												  <p class="doc-department">{{clin.city}} - {{clin.user.firstname}} </p>
                           <p class="doc-department">{{clin.address}}</p>
                         </div>
 												<div class="rating">
