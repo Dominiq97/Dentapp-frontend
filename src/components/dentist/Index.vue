@@ -184,7 +184,6 @@ export default {
   created(){
     this.getDentist(localStorage.getItem('loggedId'))
     console.log(this.$route.params.id)
-    console.log()
   //  this.count = this.countToday(this.$route.params.id)
   },
 	 methods: {
@@ -267,12 +266,8 @@ export default {
           console.log(e);
         });
     }
-
-
-
-
    }
-}
+  }
 
 </script>
 

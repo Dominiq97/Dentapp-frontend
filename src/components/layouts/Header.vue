@@ -33,16 +33,16 @@
               </ul>
             <ul v-else-if="getType=='dentist'" class="main-nav" >
                 <li>
-                    <router-link :to="{ name: 'schedule', params: {id: currentDentist.pk } }">Schedule </router-link>
+                    <router-link :to="{ name: 'schedule', params: {id: this.$route.params.id } }">Schedule </router-link>
                 </li>
                 <li class="has-submenu" >
-                    <router-link :to="{ name: 'dentistIndex', params: {id: currentDentist.pk } }">Appointments </router-link>
+                    <router-link :to="{ name: 'dentistIndex', params: {id: this.$route.params.id } }">Appointments </router-link>
                 </li>
                 <li class="has-submenu" >
-                    <router-link to="/index">Messages </router-link>
+                    <router-link :to="{ name: 'profileDentist', params: {id: this.$route.params.id } }">Profile </router-link>
                 </li>
                 <li class="has-submenu" >
-                  <router-link to="/index">My patients </router-link>
+                  <router-link :to="{ name:'myPatients', params: {id: this.$route.params.id}}">My patients </router-link>
                 </li>
                 <li class="login-link" v-if="isLoggedIn"  >
                   <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
@@ -54,12 +54,11 @@
 
             <ul v-else-if="getType=='admin'" class="main-nav">
                 <li class="has-submenu" >
-                    <router-link to="/admin/index">Dashboard </router-link>
+                    <router-link :to="{ name: 'adminIndex', params: {id: this.$route.params.id } }">Dashboard </router-link>
                 </li>
                 <li class="has-submenu" >
-                    <router-link to="/index">Clinic profile </router-link>
+                    <router-link :to="{ name: 'profileClinic', params: {id: this.$route.params.id } }">Clinic profile </router-link>
                 </li>
-
                 <li class="login-link">
                     <router-link to="/login">Logout</router-link>
                 </li>
@@ -78,10 +77,7 @@
                     <router-link to="/index">My Appointments </router-link>
                 </li>
                 <li class="has-submenu" >
-                    <router-link to="/index">Profile </router-link>
-                </li>
-                <li class="has-submenu" >
-                    <router-link to="/index">Messages </router-link>
+                    <router-link :to="{ name: 'profile', params: {id: this.$route.params.id } }">Profile </router-link>
                 </li>
                 <li class="login-link" v-if="isLoggedIn"  >
                   <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
@@ -112,7 +108,9 @@ export default {
   data() {
 		return {
       currentDentist:'',
+      currentPatient:'',
       id:null,
+      idP:null,
       patients:[],
       apps:[],
       all:null,
@@ -120,8 +118,9 @@ export default {
 		}
 	},
   created(){
-    this.getDentist(localStorage.getItem('loggedId'))
-    console.log(this.currentDentist)
+    //this.getDentist(this.$route.params.id)
+   // console.log(this.currentDentist)
+
   },
 	 methods: {
     getDentist(id) {
@@ -133,9 +132,19 @@ export default {
         .catch(e => {
         });
     },
+    getPatient(id) {
+      DentistDataService.getPatient(id)
+        .then(response => {
+          this.currentPatient = response.data;
+          this.idP = this.currentPatient.pk;
+        })
+        .catch(e => {
+        });
+    },
+
     logout(){
       this.$store.dispatch('userLogout');
-      this.$router.replace('');
+      this.$route.replace('');
     },
    },
    mounted(){

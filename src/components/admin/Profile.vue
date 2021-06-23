@@ -23,19 +23,19 @@
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
-                        <label>First Name</label>
+                        <label>Clinic's Name</label>
                         <input type="text" class="form-control" v-model="pat.user.firstname" disabled>
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" v-model="pat.user.lastname"  disabled>
+                        <label>Admin username</label>
+                        <input type="text" class="form-control" v-model="pat.user.username" disabled>
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
-                        <label>Last Appointment</label>
+                        <label>Date Joined</label>
                         <div class="cal-icon">
                           <input type="text" class="form-control" v-model="pat.user.date_joined.split('T')[0]" disabled>
                         </div>
@@ -52,6 +52,25 @@
                       <div class="form-group">
                         <label>Mobile</label>
                         <input type="text" v-model="pat.user.phone" class="form-control"  disabled>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label>City</label>
+                        <input type="text" v-model="pat.city" class="form-control"  disabled>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" v-model="pat.address" class="form-control"  disabled>
+                      </div>
+                    </div>
+
+                     <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label>Unique Identification Code</label>
+                        <input type="text" v-model="pat.uic" class="form-control"  disabled>
                       </div>
                     </div>
 
@@ -71,21 +90,20 @@
 </template>
 
 <script>
-import DentistDataService from '../services/DentistDataService'
+import DentistDataService from '../../services/DentistDataService'
 export default {
   data(){
     return{
       currentPatient:'',
       pat:null,
-      file: null,
     }
   },
   created(){
-    this.getPatient(this.$route.params.id)
+    this.getClinic(this.$route.params.id)
   },
   methods:{
-    getPatient(id) {
-      DentistDataService.get_patient_obj(id)
+    getClinic(id) {
+      DentistDataService.get_clinic_obj(id)
         .then(response => {
           this.pat = response.data
         })
@@ -93,7 +111,7 @@ export default {
           console.log(e);
         });
     },
-    },
+  },
 	mounted() {
   }
 }

@@ -2,10 +2,10 @@
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Dentapp</name>
     <description>
-        Management web application
+        Management Web Application for Dental Clinics
     </description>
-    <author email="dominic@gmail.com" href="http://cordova.io">
-        Domicles
+    <author email="catanadominic@gmail.com" href="http://cordova.io">
+        Catana Dominic Costin
     </author>
     <content src="index.html" />
     <access origin="*" />

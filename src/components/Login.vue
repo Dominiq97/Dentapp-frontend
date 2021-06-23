@@ -89,9 +89,8 @@ export default {
         .then(() => {
 
 
-            if (localStorage.getItem('userType')=='patient'){
-              this.$router.push({ name: 'index' })}
-
+            if (localStorage.getItem('userType')=='patient')
+              this.get_patient(localStorage.getItem('loggedId'))
             else if (localStorage.getItem('userType')=='dentist'){
               this.getDentist(localStorage.getItem('loggedId'))
             }else if (localStorage.getItem('userType')=='admin'){
@@ -126,6 +125,17 @@ export default {
             console.log('dentist is not defined')
           });
         },
+       get_patient(id) {
+            DentistDataService.getPatient(id)
+          .then(response => {
+            this.pat = response.data.pk
+            console.log(this.pat)
+            this.$router.push({ name: 'index', params:{id:this.pat} })
+          })
+          .catch(e => {
+            console.log('dentist is not defined')
+          });
+        }
 	},
 }
 </script>

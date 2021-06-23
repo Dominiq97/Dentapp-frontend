@@ -14,6 +14,9 @@ import AdminIndex from '@/components/admin/Index'
 import DentistIndex from '@/components/dentist/Index'
 import Schedule from '@/components/dentist/Schedule'
 import Profile from '@/components/Profile'
+import ProfileAdmin from '@/components/admin/Profile'
+import ProfileDentist from '@/components/dentist/Profile'
+import MyPatients from '@/components/dentist/MyPatients'
 import store from '../store'
 
 
@@ -27,7 +30,7 @@ const router = new Router({
       component: Login
     },
     {
-      path: '/patient/index',
+      path: '/patient/:id/index',
       name: 'index',
       component: Index,
 
@@ -86,6 +89,21 @@ const router = new Router({
         path: '/profile/:id',
         name: 'profile',
         component: Profile,
+      },
+      {
+        path: '/profileDentist/:id',
+        name: 'profileDentist',
+        component: ProfileDentist,
+      },
+      {
+        path: '/profileClinic/:id',
+        name: 'profileClinic',
+        component: ProfileAdmin,
+      },
+      {
+        path: '/myPatients/:id',
+        name: 'myPatients',
+        component: MyPatients,
       },
 
 

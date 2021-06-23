@@ -85,6 +85,23 @@ class DentistDataService {
     return http.get(`/api/patients_of_clinic/${id}`)
   }
 
+  get_patient_obj(id){
+    return http.get(`/api/patient/${id}`)
+  }
+
+  get_dentist_obj(id){
+    return http.get(`/api/dentist/${id}`)
+  }
+
+  get_clinic_obj(id){
+    return http.get(`/api/clinic/${id}`)
+  }
+
+  get_patients_of_dentist(id){
+    return http.get(`/api/patients_of_dentist/${id}`)
+  }
+
+
 
   // update(id, data) {
   //   return http.put(`/tutorials/${id}`, data);

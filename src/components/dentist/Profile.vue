@@ -24,18 +24,18 @@
                     <div class="col-12 col-md-6">
                       <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" v-model="pat.user.firstname" disabled>
+                        <input type="text" class="form-control" v-model="pat.firstname" disabled>
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" v-model="pat.user.lastname"  disabled>
+                        <input type="text" class="form-control" v-model="pat.lastname"  disabled>
                       </div>
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
-                        <label>Last Appointment</label>
+                        <label>Date Joined</label>
                         <div class="cal-icon">
                           <input type="text" class="form-control" v-model="pat.user.date_joined.split('T')[0]" disabled>
                         </div>
@@ -50,8 +50,10 @@
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="form-group">
-                        <label>Mobile</label>
-                        <input type="text" v-model="pat.user.phone" class="form-control"  disabled>
+                        <label>Speciality</label>
+                        <div v-for="int in pat.speciality" :key="int">
+                          <input type="text" v-model="int.name" class="form-control" disabled>
+                        </div>
                       </div>
                     </div>
 
@@ -71,7 +73,7 @@
 </template>
 
 <script>
-import DentistDataService from '../services/DentistDataService'
+import DentistDataService from '../../services/DentistDataService'
 export default {
   data(){
     return{
@@ -81,11 +83,11 @@ export default {
     }
   },
   created(){
-    this.getPatient(this.$route.params.id)
+    this.getDentist(this.$route.params.id)
   },
   methods:{
-    getPatient(id) {
-      DentistDataService.get_patient_obj(id)
+    getDentist(id) {
+      DentistDataService.get_dentist_obj(id)
         .then(response => {
           this.pat = response.data
         })
@@ -93,7 +95,7 @@ export default {
           console.log(e);
         });
     },
-    },
+  },
 	mounted() {
   }
 }
