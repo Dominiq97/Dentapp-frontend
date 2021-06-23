@@ -1,83 +1,111 @@
 <template>
-        <!-- Header -->
-       <header class="header">
-           <nav class="navbar navbar-expand-lg header-nav">
-               <div class="navbar-header">
-                   <a id="mobile_btn" href="javascript:void(0);">
-                       <span class="bar-icon">
-                           <span></span>
-                           <span></span>
-                           <span></span>
-                       </span>
-                   </a>
-                   <router-link to="/index" class="navbar-brand logo">
-                       <img src="@/assets/img/logo.png" class="img-fluid" alt="Logo">
-                   </router-link>
-               </div>
-               <div class="main-menu-wrapper">
-                   <div class="menu-header">
-                       <router-link to="/index" class="menu-logo">
-                           <img src="@/assets/img/logo.png" class="img-fluid" alt="Logo">
-                       </router-link>
-                       <a id="menu_close" class="menu-close" href="javascript:void(0);">
-                           <i class="fas fa-times"></i>
-                       </a>
-                   </div>
-                   <ul v-if="getType=='nimic'" class="main-nav">
-                    </ul>
-                  <ul v-else-if="getType=='dentist'" class="main-nav">
-                       <li class="has-submenu" >
-                           <router-link :to="{ name: 'schedule', params: {id: currentDentist.pk } }">Schedule </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link :to="{ name: 'dentistIndex', params: {id: currentDentist.pk } }">Appointments </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link to="/index">Messages </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                          <router-link to="/index">My patients </router-link>
-                       </li>
-                   </ul>
-                    <ul v-else-if="getType=='admin'" class="main-nav">
-                       <li class="has-submenu" >
-                           <router-link to="/admin/index">Dashboard </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link to="/index">Clinic profile </router-link>
-                       </li>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg header-nav">
+      <div class="navbar-header">
+        <a id="mobile_btn" href="javascript:void(0);">
+            <span class="bar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+        <router-link to="/" class="navbar-brand logo">
+            <img src="@/assets/img/logo.png" class="img-fluid" alt="Logo">
+        </router-link>
+      </div>
+        <div class="main-menu-wrapper">
+            <div class="menu-header">
+                <router-link to="/" class="menu-logo">
+                    <img src="@/assets/img/logo.png" class="img-fluid" alt="Logo">
+                </router-link>
+                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+              <ul class="main-nav" v-if="getType=='nimic'">
+                <li class="has-submenu" :class="homeMenu ? 'active' : 'notactive'">
+                  <router-link to="/index">Home </router-link>
+                </li>
+                <li class="login-link" v-if="isLoggedIn"  >
+                  <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+                </li>
+                <li class="login-link" v-else >
+                  <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
+                </li>
+              </ul>
+            <ul v-else-if="getType=='dentist'" class="main-nav" >
+                <li>
+                    <router-link :to="{ name: 'schedule', params: {id: currentDentist.pk } }">Schedule </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link :to="{ name: 'dentistIndex', params: {id: currentDentist.pk } }">Appointments </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link to="/index">Messages </router-link>
+                </li>
+                <li class="has-submenu" >
+                  <router-link to="/index">My patients </router-link>
+                </li>
+                <li class="login-link" v-if="isLoggedIn"  >
+                  <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+                </li>
+                <li class="login-link" v-else >
+                  <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
+                </li>
+            </ul>
 
-                       <li class="login-link">
-                           <router-link to="/login">Logout</router-link>
-                       </li>
-                   </ul>
-                   <ul v-else-if="getType=='patient'" class="main-nav">
-                     <li class="has-submenu" >
-                           <router-link to="/patient/search_dentist">Search dentist </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link to="/index">My Appointments </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link to="/index">Profile </router-link>
-                       </li>
-                       <li class="has-submenu" >
-                           <router-link to="/index">Messages </router-link>
-                       </li>
+            <ul v-else-if="getType=='admin'" class="main-nav">
+                <li class="has-submenu" >
+                    <router-link to="/admin/index">Dashboard </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link to="/index">Clinic profile </router-link>
+                </li>
 
-                   </ul>
-               </div>
-               <ul class="nav header-navbar-rht">
-                   <li v-if="isLoggedIn" class="nav-item" >
-                     <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
-                   </li>
-                   <li v-else class="nav-item">
-                       <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
-                   </li>
-               </ul>
-           </nav>
-       </header>
-       <!-- /Header -->
+                <li class="login-link">
+                    <router-link to="/login">Logout</router-link>
+                </li>
+                <li class="login-link" v-if="isLoggedIn"  >
+                  <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+                </li>
+                <li class="login-link" v-else >
+                  <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
+                </li>
+            </ul>
+            <ul v-else-if="getType=='patient'" class="main-nav">
+              <li class="has-submenu" >
+                    <router-link to="/patient/search_dentist">Search dentist </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link to="/index">My Appointments </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link to="/index">Profile </router-link>
+                </li>
+                <li class="has-submenu" >
+                    <router-link to="/index">Messages </router-link>
+                </li>
+                <li class="login-link" v-if="isLoggedIn"  >
+                  <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+                </li>
+                <li class="login-link" v-else >
+                  <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
+                </li>
+
+            </ul>
+        </div>
+
+        <ul class="nav header-navbar-rht">
+            <li v-if="isLoggedIn" class="nav-item" >
+              <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
+            </li>
+            <li v-else class="nav-item">
+                <router-link class="nav-link header-login" to='/'>login / Signup </router-link>
+            </li>
+        </ul>
+
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -112,6 +140,42 @@ export default {
       this.$router.replace('');
     },
    },
+   mounted(){
+       var $wrapper = $('.main-wrapper');
+       $('.main-nav a').on('click', function(e) {
+            if($(this).parent().hasClass('has-submenu')) {
+                e.preventDefault();
+            }
+            if(!$(this).hasClass('submenu')) {
+                $('ul', $(this).parents('ul:first')).slideUp(350);
+                $('a', $(this).parents('ul:first')).removeClass('submenu');
+                $(this).next('ul').slideDown(350);
+                $(this).addClass('submenu');
+            } else if($(this).hasClass('submenu')) {
+                $(this).removeClass('submenu');
+                $(this).next('ul').slideUp(350);
+            }
+        });
+       $('body').append('<div class="sidebar-overlay"></div>');
+       $(document).on('click', '#mobile_btn', function() {
+           $wrapper.toggleClass('slide-nav');
+           $('.sidebar-overlay').toggleClass('opened');
+           $('html').addClass('menu-opened');
+           $('#task_window').removeClass('opened');
+           return false;
+       });
+
+    $(document).on('click', '#menu_close', function() {
+        $('html').removeClass('menu-opened');
+        $('.sidebar-overlay').removeClass('opened');
+        $('main-wrapper').removeClass('slide-nav');
+    });
+    $('.main-nav ul li:not(.submenu) a').click(function(){
+            $("html").removeClass('menu-opened');
+            $(".sidebar-overlay").removeClass('opened');
+        });
+
+   },
    computed: {
 
        getType(){
@@ -128,6 +192,9 @@ export default {
        },
        currentPath() {
            return this.$route.name
+       },
+       homeMenu() {
+           return this.$route.name == 'index';
        },
    },
 

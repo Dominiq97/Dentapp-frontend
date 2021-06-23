@@ -25,10 +25,7 @@ import {Schedule} from './schedule'
 let Bootstrap = require('bootstrap')
 import 'bootstrap/dist/css/bootstrap.css'
 
- if(window.location.pathname.includes("admin")) {
-}else {
-  require('./assets/css/style.css');
-}
+require('./assets/css/style.css');
 
 
 import './assets/plugins/fontawesome/css/fontawesome.min.css'
