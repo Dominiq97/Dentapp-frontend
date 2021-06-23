@@ -6,7 +6,7 @@
 					<div class="banner-header">
 						<h1>Dentapp</h1>
 						<p>A management application for dental clinics, dentist, but also for you</p>
-						<a href="/patient/choose_dentist" class="btn-yellow">Make an Appointment</a>
+						<a href="/patient/search_dentist" class="btn-yellow">Make an Appointment</a>
 					</div>
 				</div>
 			</div>

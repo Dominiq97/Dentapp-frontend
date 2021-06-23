@@ -1,23 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-/** For Home Pages **/
 import Index from '@/components/Index.vue'
-
-
-/** For Doctor **/
 import DoctorDashboard from '@/components/dentist/Index'
-
-
-/** For Patient **/
 import addBooking from '@/components/patient/Booking'
 import BookingSuccess from '@/components/patient/BookingSuccess'
 import SearchDentist from '@/components/patient/SearchDentist'
-
-
-
-/** For Admin**/
-
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import Register from '@/components/Register'
@@ -26,6 +13,7 @@ import AdminRegister from '@/components/admin/Register'
 import AdminIndex from '@/components/admin/Index'
 import DentistIndex from '@/components/dentist/Index'
 import Schedule from '@/components/dentist/Schedule'
+import Profile from '@/components/Profile'
 import store from '../store'
 
 
@@ -93,6 +81,11 @@ const router = new Router({
         path: '/dentist/:id/schedule',
         name: 'schedule',
         component: Schedule,
+      },
+      {
+        path: '/profile/:id',
+        name: 'profile',
+        component: Profile,
       },
 
 

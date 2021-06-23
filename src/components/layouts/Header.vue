@@ -23,9 +23,7 @@
                 </a>
             </div>
               <ul class="main-nav" v-if="getType=='nimic'">
-                <li class="has-submenu" :class="homeMenu ? 'active' : 'notactive'">
-                  <router-link to="/index">Home </router-link>
-                </li>
+
                 <li class="login-link" v-if="isLoggedIn"  >
                   <router-link class="nav-link header-login" :to = "{ name:'logout' }">Logout </router-link>
                 </li>
